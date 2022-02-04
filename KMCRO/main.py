@@ -2,7 +2,7 @@ import math as m
 import random as r
 
 import matplotlib.pyplot as plt
-
+import kmeans
 
 # Расчёт центроид
 def findCentroid(dataSet, dataSetColumn, cluster, kNumber):
@@ -31,9 +31,6 @@ def countSse(euclidDist):
     return sum
 
 
-# Количество кластеров
-n = 3
-
 # Пример из excel файла
 # dataSet = [[5, 0],
 # [5, 2],
@@ -47,44 +44,33 @@ n = 3
 # [5, 4]]
 # cluster = [1, 2, 1, 2, 1, 2, 2, 2, 1, 2]
 
+# Количество кластеров
+n = 3
 
 # Рандомный датасет на 1000 точек
 dataSet = [[r.randint(-15, 15) for i in range(2)] for j in range(1000)]
-lenDs = len(dataSet)
 
 # Рандомный кластер на длину датасета
-cluster = [r.randint(1, n) for i in range(lenDs)]
+cluster = [r.randint(1, n) for i in range(len(dataSet))]
 
-
-exits = True
-k = 1
-while exits:
-    centroid = [[findCentroid(dataSet, col, cluster, kNumber + 1) for col in range(2)] for kNumber in range(n)]
-    euclidDist = [[euclideanDistance(dataSet[j], centroid[i]) for i in range(len(centroid))] for j in range(lenDs)]
-    newCluster = [euclidDist[i].index(min(euclidDist[i])) + 1 for i in range(len(euclidDist))]
-    sse = countSse(euclidDist)
-    if cluster == newCluster:
-        exits = False
-    else:
-        cluster = newCluster
-        k += 1
+cluster, centroid, sse, k = kmeans.kMeans(dataSet, cluster, len(dataSet), n)
 
 print(f"Count of Cluster: {n}\nCentroid: {centroid}\nSSE: {sse}\nCount of Iteration: {k}")
 
-for i in range(lenDs):
-    if newCluster[i] == 1:
+for i in range(len(dataSet)):
+    if cluster[i] == 1:
         plt.scatter(dataSet[i][0], dataSet[i][1], c='red', marker='o')
-    elif newCluster[i] == 2:
+    elif cluster[i] == 2:
         plt.scatter(dataSet[i][0], dataSet[i][1], c='blue', marker='^')
-    elif newCluster[i] == 3:
+    elif cluster[i] == 3:
         plt.scatter(dataSet[i][0], dataSet[i][1], c='green', marker='s')
-    elif newCluster[i] == 4:
+    elif cluster[i] == 4:
         plt.scatter(dataSet[i][0], dataSet[i][1], c='pink', marker='p')
-    elif newCluster[i] == 5:
+    elif cluster[i] == 5:
         plt.scatter(dataSet[i][0], dataSet[i][1], c='orange', marker='d')
-    elif newCluster[i] == 6:
+    elif cluster[i] == 6:
         plt.scatter(dataSet[i][0], dataSet[i][1], c='purple', marker='*')
-    elif newCluster[i] == 7:
+    elif cluster[i] == 7:
         plt.scatter(dataSet[i][0], dataSet[i][1], c='lime', marker='H')
 
 for i in range(len(centroid)):
