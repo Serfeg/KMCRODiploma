@@ -44,18 +44,18 @@ def countSse(euclidDist):
 # [5, 4]]
 # cluster = [1, 2, 1, 2, 1, 2, 2, 2, 1, 2]
 
-# Количество кластеров
-n = 3
-
+# Количество кластеров и точек
+k = 3
+n = 1000
 # Рандомный датасет на 1000 точек
-dataSet = [[r.randint(-15, 15) for i in range(2)] for j in range(1000)]
+dataSet = [[r.randint(-15, 15) for i in range(2)] for j in range(n)]
 
 # Рандомный кластер на длину датасета
-cluster = [r.randint(1, n) for i in range(len(dataSet))]
+cluster = [r.randint(1, k) for i in range(len(dataSet))]
 
-cluster, centroid, sse, k = kmeans.kMeans(dataSet, cluster, len(dataSet), n)
+cluster, centroid, sse, iter = kmeans.kMeans(dataSet, cluster, len(dataSet), k)
 
-print(f"Count of Cluster: {n}\nCentroid: {centroid}\nSSE: {sse}\nCount of Iteration: {k}")
+print(f"Count of Cluster: {k}\nCentroid: {centroid}\nSSE: {sse}\nCount of Iteration: {iter}")
 
 for i in range(len(dataSet)):
     if cluster[i] == 1:
