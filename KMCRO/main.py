@@ -45,14 +45,16 @@ n = 3
 # [2, 3],
 # [1, 3],
 # [5, 4]]
+# cluster = [1, 2, 1, 2, 1, 2, 2, 2, 1, 2]
+
 
 # Рандомный датасет на 1000 точек
-dataSet = [[r.randint(-15, 15) for i in range(2)] for j in range(100)]
+dataSet = [[r.randint(-15, 15) for i in range(2)] for j in range(1000)]
 lenDs = len(dataSet)
 
 # Рандомный кластер на длину датасета
 cluster = [r.randint(1, n) for i in range(lenDs)]
-# cluster = [1, 2, 1, 2, 1, 2, 2, 2, 1, 2]
+
 
 exits = True
 k = 1
