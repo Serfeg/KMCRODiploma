@@ -1,35 +1,7 @@
 import math as m
 import random as r
-
 import matplotlib.pyplot as plt
 import kmeans
-
-# Расчёт центроид
-def findCentroid(dataSet, dataSetColumn, cluster, kNumber):
-    sum = 0
-    z = 0
-    for i in range(len(dataSet)):
-        if cluster[i] == kNumber:
-            z += 1
-            sum += dataSet[i][dataSetColumn]
-    return sum / z if z != 0 else 0
-
-
-# Расчёт евклидова расстояния
-def euclideanDistance(dataSetRow, centroid):
-    sum = 0
-    for i in range(len(dataSetRow)):
-        sum += (dataSetRow[i] - centroid[i]) ** 2
-    return sum
-
-
-# Расчёт квадратичной ошибки
-def countSse(euclidDist):
-    sum = 0
-    for i in range(len(euclidDist)):
-        sum += min(euclidDist[i])
-    return sum
-
 
 # Пример из excel файла
 # dataSet = [[5, 0],
