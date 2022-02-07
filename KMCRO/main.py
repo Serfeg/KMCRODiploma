@@ -17,7 +17,7 @@ import kmeans
 # cluster = [1, 2, 1, 2, 1, 2, 2, 2, 1, 2]
 
 # Количество кластеров и точек
-k = 3
+k = 7
 n = 1000
 # Рандомный датасет на 1000 точек
 dataSet = [[r.randint(-15, 15) for i in range(2)] for j in range(n)]

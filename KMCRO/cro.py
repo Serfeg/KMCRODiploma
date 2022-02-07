@@ -34,8 +34,11 @@ def intermolecularCollision(lenDataSet, kNumber):
     originalPhi2 = [r.randint(1, kNumber) for _ in range(lenDataSet)]
     newPhi1 = [i for i in originalPhi1]
     newPhi2 = [i for i in originalPhi2]
-    x = r.randint(0, lenDataSet - 1)
-    y = r.randint(0, lenDataSet - 1)
+    x = 0
+    y = 0
+    while x == y:
+        x = r.randint(0, lenDataSet - 1)
+        y = r.randint(0, lenDataSet - 1)
     if x > y:
         x, y = swap(x, y)
     for i in range(x, y):
@@ -63,5 +66,5 @@ def intermolecularSynthesis(lenDataSet, kNumber):
 k = 3
 n = 10
 
-cluster, cluster1, cluster2 = intermolecularSynthesis(n, k)
-print(f"{cluster}\n{cluster1}\n{cluster2}\n")
+cluster, cluster1, cluster2, cluster3 = intermolecularCollision(n, k)
+print(f"{x},{y}\n{cluster}\n{cluster1}\n{cluster2}\n{cluster3}")
