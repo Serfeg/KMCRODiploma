@@ -23,7 +23,7 @@ n = 1000
 dataSet = [[r.randint(-15, 15) for i in range(2)] for j in range(n)]
 
 # Рандомный кластер на длину датасета
-cluster = [r.randint(1, k) for i in range(len(dataSet))]
+cluster = [r.randint(1, k) for i in range(n)]
 
 cluster, centroid, sse, iter = kmeans.kMeans(dataSet, cluster, len(dataSet), k)
 
@@ -47,6 +47,7 @@ for i in range(len(dataSet)):
 
 for i in range(len(centroid)):
     plt.scatter(centroid[i][0], centroid[i][1], c='black', marker='2', linewidths=5)
+
 
 plt.grid(True)
 plt.show()

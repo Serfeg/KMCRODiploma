@@ -67,4 +67,4 @@ k = 3
 n = 10
 
 cluster, cluster1, cluster2, cluster3 = intermolecularCollision(n, k)
-print(f"{x},{y}\n{cluster}\n{cluster1}\n{cluster2}\n{cluster3}")
+print(f"{cluster}\n{cluster1}\n{cluster2}\n{cluster3}")

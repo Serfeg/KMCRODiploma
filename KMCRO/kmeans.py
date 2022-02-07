@@ -6,7 +6,7 @@ def findCentroid(dataSet, dataSetColumn, cluster, kNumber):
         if cluster[i] == kNumber:
             z += 1
             sum += dataSet[i][dataSetColumn]
-    return sum / z if z != 0 else 0
+    return round(sum / z, 2) if z != 0 else 0
 
 
 # Расчёт евклидова расстояния
