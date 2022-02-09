@@ -29,7 +29,7 @@ def kMeans(dataSet, cluster, lenDataSet, kNumber):
     exits = True
     k = 1
     while exits:
-        centroid = [[findCentroid(dataSet, col, cluster, i + 1) for col in range(2)] for i in range(kNumber)]
+        centroid = [[findCentroid(dataSet, col, cluster, i + 1) for col in range(len(dataSet[0]))] for i in range(kNumber)]
         euclidDist = [[euclideanDistance(dataSet[j], centroid[i]) for i in range(len(centroid))] for j in
                       range(lenDataSet)]
         newCluster = [euclidDist[i].index(min(euclidDist[i])) + 1 for i in range(len(euclidDist))]
