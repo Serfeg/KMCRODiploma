@@ -7,13 +7,13 @@ from scipy.stats.contingency import crosstab
 
 def makeDataSet(filename):
     dataSet = []
-    with open(filename, "r") as file:
-        for line in file:
-            dataSet.append(line.split())
-        file.close()
-    dataSet.pop(0)
+    file = open(filename)
+    s = file.readlines()[1:]
+    for i in s:
+        dataSet.append(i.split())
+    file.close()
     for i in range(len(dataSet)):
-        for j in range(len(dataSet[0])):
+        for j in range(len(dataSet[i])):
             dataSet[i][j] = float(dataSet[i][j])
     for i in range(len(dataSet)):
         dataSet[i].pop(0)
