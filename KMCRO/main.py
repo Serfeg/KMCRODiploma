@@ -5,12 +5,22 @@ import kmeans
 from scipy.stats.contingency import crosstab
 
 
-if __name__ == "__main__":
+def makeDataSet(filename):
     dataSet = []
-    with open("11_33_37_42.txt", "r") as file:
+    with open(filename, "r") as file:
         for line in file:
             dataSet.append(line.split())
         file.close()
+    dataSet.pop(0)
+    for i in range(len(dataSet)):
+        for j in range(len(dataSet[0])):
+            dataSet[i][j] = float(dataSet[i][j])
+    for i in range(len(dataSet)):
+        dataSet[i].pop(0)
+    return dataSet
+
+if __name__ == "__main__":
+    dataSet = makeDataSet("11_33_37_42.txt")
     # Пример из excel файла
     # dataSet = [[5, 0, 5, -1],
     #            [5, 2, 2, 0],
@@ -24,16 +34,16 @@ if __name__ == "__main__":
     #            [5, 4, 9, 0]]
     # cluster = [1, 2, 1, 2, 1, 2, 2, 2, 1, 2]
     # Количество кластеров и точек
-    #k = 7
+    k = 4
     #n = 1000
-    # Рандомный датасет на 1000 точек
+    #Рандомный датасет на 1000 точек
     #dataSet = [[r.randint(-15, 15) for i in range(4)] for j in range(n)]
 
-    # Рандомный кластер на длину датасета
-    #originalCluster = [r.randint(1, k) for i in range(len(dataSet))]
-    #newCluster, centroid, sse, iter = kmeans.kMeans(dataSet, originalCluster, len(dataSet), k)
+    #Рандомный кластер на длину датасета
+    originalCluster = [r.randint(1, k) for i in range(len(dataSet))]
+    newCluster, centroid, sse, iter = kmeans.kMeans(dataSet, originalCluster, len(dataSet), k)
 
-    #print(f"Count of Cluster: {k}\nCentroid: {centroid}\nSSE: {sse}\nCount of Iteration: {iter}")
+    print(f"Count of Cluster: {k}\nCentroid: {centroid}\nSSE: {sse}\nCount of Iteration: {iter}\nClusters: {newCluster}")
     # for i in range(len(dataSet)):
     #     if cluster[i] == 1:
     #         plt.scatter(dataSet[i][0], dataSet[i][1], c='red', marker='o')
