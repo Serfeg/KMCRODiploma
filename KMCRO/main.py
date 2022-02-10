@@ -24,9 +24,10 @@ def makeDataSet(filename):
 if __name__ == "__main__":
     dataSet = makeDataSet("11_33_37_42.txt")
     df = pd.read_csv('11_33_37_42.txt', delimiter="\t")
-    
+
     # Количество кластеров и точек
     k = 4
+
     # Рандомный кластер на длину датасета
     originalCluster = [r.randint(1, k) for i in range(len(dataSet))]
     newCluster, centroid, sse, countIter = kmeans.kMeans(dataSet, originalCluster, len(dataSet), k)
