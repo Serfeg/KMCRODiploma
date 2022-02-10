@@ -1,3 +1,5 @@
+import math as m
+
 # Расчёт центроид
 def findCentroid(dataSet, dataSetColumn, cluster, kNumber):
     sum = 0
