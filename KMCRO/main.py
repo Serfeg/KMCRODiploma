@@ -3,6 +3,7 @@ import random as r
 import matplotlib.pyplot as plt
 import kmeans
 from scipy.stats.contingency import crosstab
+import pandas as pd
 
 
 def makeDataSet(filename):
@@ -19,31 +20,21 @@ def makeDataSet(filename):
         dataSet[i].pop(0)
     return dataSet
 
+
 if __name__ == "__main__":
     dataSet = makeDataSet("11_33_37_42.txt")
-    # Пример из excel файла
-    # dataSet = [[5, 0, 5, -1],
-    #            [5, 2, 2, 0],
-    #            [3, 1, 1, -6],
-    #            [0, 4, 10, 10],
-    #            [2, 1, 20, 9],
-    #            [4, 2, 5, -5],
-    #            [2, 2, 6, 56],
-    #            [2, 3, 8, -9],
-    #            [1, 3, 6, 1],
-    #            [5, 4, 9, 0]]
-    # cluster = [1, 2, 1, 2, 1, 2, 2, 2, 1, 2]
+    df = pd.read_csv('11_33_37_42.txt', delimiter="\t")
     # Количество кластеров и точек
     k = 4
-    #n = 1000
-    #Рандомный датасет на 1000 точек
-    #dataSet = [[r.randint(-15, 15) for i in range(4)] for j in range(n)]
-
-    #Рандомный кластер на длину датасета
+    # Рандомный кластер на длину датасета
     originalCluster = [r.randint(1, k) for i in range(len(dataSet))]
-    newCluster, centroid, sse, iter = kmeans.kMeans(dataSet, originalCluster, len(dataSet), k)
-
-    print(f"Count of Cluster: {k}\nCentroid: {centroid}\nSSE: {sse}\nCount of Iteration: {iter}\nClusters: {newCluster}")
+    newCluster, centroid, sse, countIter = kmeans.kMeans(dataSet, originalCluster, len(dataSet), k)
+    dfCentroid = pd.DataFrame()
+    df['Cluster'] = newCluster
+    for i in range(len(centroid)):
+        dfCentroid['Cluster '+str(i+1)] = centroid[i]
+    print(f"Count of Cluster: {k}\nSSE: {sse}\nCount of Iteration: {countIter}\n"
+          f"Centroid:\n{dfCentroid}\nDataSet with Clusters:\n{df}")
     # for i in range(len(dataSet)):
     #     if cluster[i] == 1:
     #         plt.scatter(dataSet[i][0], dataSet[i][1], c='red', marker='o')

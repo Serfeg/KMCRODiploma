@@ -61,10 +61,3 @@ def intermolecularSynthesis(lenDataSet, kNumber):
             newPhi.append(originalPhi2[i])
     ### Здесь должна быть функция проверки пригодности данного "раствора", но пока что её нет
     return originalPhi1, originalPhi2, newPhi
-
-
-k = 3
-n = 10
-
-cluster, cluster1, cluster2, cluster3 = intermolecularCollision(n, k)
-print(f"{cluster}\n{cluster1}\n{cluster2}\n{cluster3}")

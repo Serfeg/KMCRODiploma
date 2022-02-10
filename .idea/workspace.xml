@@ -20,7 +20,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Python.cro">
+  <component name="RunManager" selected="Python.main">
     <configuration name="cro" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="KMCRODiploma" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -65,8 +65,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.cro" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.cro" />
       </list>
     </recent_temporary>
   </component>
