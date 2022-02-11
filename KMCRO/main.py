@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import kmeans
 from scipy.stats.contingency import crosstab
 import pandas as pd
+from sklearn.metrics import confusion_matrix
 
 
 def makeDataSet(filename):
@@ -39,7 +40,8 @@ if __name__ == "__main__":
         dfCentroid['Cluster '+str(i+1)] = centroid[i]
 
     print(f"Count of Cluster: {k}\nSSE: {sse}\nCount of Iteration: {countIter}\n"
-          f"Centroid:\n{dfCentroid}\nDataSet with Clusters:\n{df}")
+          f"Centroid:\n{dfCentroid}\nDataSet with Clusters:\n{df}\n"
+          f"Confusion Matrix:\n{confusion_matrix(originalCluster, newCluster)}")
 
     # for i in range(len(dataSet)):
     #     if cluster[i] == 1:
