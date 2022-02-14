@@ -2,6 +2,7 @@ import math as m
 import random as r
 import matplotlib.pyplot as plt
 import kmeans
+import cro
 from scipy.stats.contingency import crosstab
 import pandas as pd
 from sklearn.metrics import confusion_matrix
@@ -23,45 +24,28 @@ def makeDataSet(filename):
 
 
 if __name__ == "__main__":
-    dataSet = makeDataSet("11_33_37_42.txt")
-    df = pd.read_csv('11_33_37_42.txt', delimiter="\t")
+    #dataSet = makeDataSet("11_33_37_42.txt")
+    #df = pd.read_csv('11_33_37_42.txt', delimiter="\t")
 
     # Количество кластеров и точек
     k = 4
 
     # Рандомный кластер на длину датасета
     originalCluster = [r.randint(1, k) for i in range(len(dataSet))]
-    newCluster, centroid, sse, countIter = kmeans.kMeans(dataSet, originalCluster, len(dataSet), k)
+    # newCluster, centroid, sse, countIter = kmeans.kMeans(dataSet, originalCluster, k)
 
-    dfCentroid = pd.DataFrame()
+    #dfCentroid = pd.DataFrame()
 
-    df['Cluster'] = newCluster
-    for i in range(len(centroid)):
-        dfCentroid['Cluster '+str(i+1)] = centroid[i]
+    # df['Cluster'] = newCluster
+    # for i in range(len(centroid)):
+    #     dfCentroid['Cluster '+str(i + 1)] = centroid[i]
+
+    # print(f"Count of Cluster: {k}\nSSE: {sse}\nCount of Iteration: {countIter}\n"
+    #       f"Centroid:\n{dfCentroid}\n\nDataSet with Clusters:\n{df}\n\n"
+    #       f"Confusion Matrix:\n{confusion_matrix(originalCluster, newCluster)}\nNew Cluster: {newCluster}")
+
+    newCluster, centroid, sse, countIter = kmeans.kMeansWithCos(dataSet, originalCluster, k)
 
     print(f"Count of Cluster: {k}\nSSE: {sse}\nCount of Iteration: {countIter}\n"
-          f"Centroid:\n{dfCentroid}\nDataSet with Clusters:\n{df}\n"
-          f"Confusion Matrix:\n{confusion_matrix(originalCluster, newCluster)}")
+          f"Centroid:\n{dfCentroid}\nNew Cluster: {newCluster}")
 
-    # for i in range(len(dataSet)):
-    #     if cluster[i] == 1:
-    #         plt.scatter(dataSet[i][0], dataSet[i][1], c='red', marker='o')
-    #     elif cluster[i] == 2:
-    #         plt.scatter(dataSet[i][0], dataSet[i][1], c='blue', marker='^')
-    #     elif cluster[i] == 3:
-    #         plt.scatter(dataSet[i][0], dataSet[i][1], c='green', marker='s')
-    #     elif cluster[i] == 4:
-    #         plt.scatter(dataSet[i][0], dataSet[i][1], c='pink', marker='p')
-    #     elif cluster[i] == 5:
-    #         plt.scatter(dataSet[i][0], dataSet[i][1], c='orange', marker='d')
-    #     elif cluster[i] == 6:
-    #         plt.scatter(dataSet[i][0], dataSet[i][1], c='purple', marker='*')
-    #     elif cluster[i] == 7:
-    #         plt.scatter(dataSet[i][0], dataSet[i][1], c='lime', marker='H')
-    #
-    # for i in range(len(centroid)):
-    #     plt.scatter(centroid[i][0], centroid[i][1], c='black', marker='2', linewidths=5)
-    #
-    #
-    # plt.grid(True)
-    # plt.show()

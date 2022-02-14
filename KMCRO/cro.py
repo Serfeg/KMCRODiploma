@@ -8,14 +8,15 @@ def swap(x, y):
     return x, y
 
 
+# Первый метод, индекс 0
 def singleMoleculeCollision(lenDataSet, kNumber):
     originalPhi = [r.randint(1, kNumber) for _ in range(lenDataSet)]
     newPhi = [i for i in originalPhi]
     newPhi[r.randint(0, lenDataSet-1)] = r.randint(1, kNumber)
-    ### Здесь должна быть функция проверки пригодности данного "раствора", но пока что её нет
-    return originalPhi, newPhi
+    return newPhi
 
 
+# Второй метод, индекс 1
 def singleMoleculeDecomposition(lenDataSet, kNumber):
     originalPhi = [r.randint(1, kNumber) for _ in range(lenDataSet)]
     oddPhi = [i for i in originalPhi]
@@ -25,10 +26,10 @@ def singleMoleculeDecomposition(lenDataSet, kNumber):
             evenPhi[i] = r.randint(1, kNumber)
         else:
             oddPhi[i] = r.randint(1, kNumber)
-    ### Здесь должна быть функция проверки пригодности данного "раствора", но пока что её нет
-    return originalPhi, oddPhi, evenPhi
+    return oddPhi, evenPhi
 
 
+# Третий метод, индекс 2
 def intermolecularCollision(lenDataSet, kNumber):
     originalPhi1 = [r.randint(1, kNumber) for _ in range(lenDataSet)]
     originalPhi2 = [r.randint(1, kNumber) for _ in range(lenDataSet)]
@@ -44,10 +45,10 @@ def intermolecularCollision(lenDataSet, kNumber):
     for i in range(x, y):
         newPhi1[i] = r.randint(1, kNumber)
         newPhi2[i] = r.randint(1, kNumber)
-    ### Здесь должна быть функция проверки пригодности данного "раствора", но пока что её нет
-    return originalPhi1, newPhi1, originalPhi2, newPhi2
+    return newPhi1, newPhi2
 
 
+# Четвёртый метод, индекс 3
 def intermolecularSynthesis(lenDataSet, kNumber):
     originalPhi1 = [r.randint(1, kNumber) for _ in range(lenDataSet)]
     originalPhi2 = [r.randint(1, kNumber) for _ in range(lenDataSet)]
@@ -59,5 +60,4 @@ def intermolecularSynthesis(lenDataSet, kNumber):
             newPhi.append(originalPhi1[i])
         else:
             newPhi.append(originalPhi2[i])
-    ### Здесь должна быть функция проверки пригодности данного "раствора", но пока что её нет
-    return originalPhi1, originalPhi2, newPhi
+    return newPhi
