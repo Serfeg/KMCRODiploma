@@ -24,28 +24,23 @@ def makeDataSet(filename):
 
 
 if __name__ == "__main__":
-    #dataSet = makeDataSet("11_33_37_42.txt")
-    #df = pd.read_csv('11_33_37_42.txt', delimiter="\t")
-
+    dataSet = makeDataSet("11_33_37_42.txt")
+    df = pd.read_csv('11_33_37_42.txt', delimiter="\t")
     # Количество кластеров и точек
     k = 4
-
     # Рандомный кластер на длину датасета
     originalCluster = [r.randint(1, k) for i in range(len(dataSet))]
-    # newCluster, centroid, sse, countIter = kmeans.kMeans(dataSet, originalCluster, k)
-
-    #dfCentroid = pd.DataFrame()
-
-    # df['Cluster'] = newCluster
-    # for i in range(len(centroid)):
-    #     dfCentroid['Cluster '+str(i + 1)] = centroid[i]
-
-    # print(f"Count of Cluster: {k}\nSSE: {sse}\nCount of Iteration: {countIter}\n"
-    #       f"Centroid:\n{dfCentroid}\n\nDataSet with Clusters:\n{df}\n\n"
-    #       f"Confusion Matrix:\n{confusion_matrix(originalCluster, newCluster)}\nNew Cluster: {newCluster}")
-
+    #newCluster, centroid, sse, countIter = kmeans.kMeans(dataSet, originalCluster, k)
     newCluster, centroid, sse, countIter = kmeans.kMeansWithCos(dataSet, originalCluster, k)
+    dfCentroid = pd.DataFrame()
+
+    df['Cluster'] = newCluster
+    for i in range(len(centroid)):
+        dfCentroid['Cluster '+str(i + 1)] = centroid[i]
 
     print(f"Count of Cluster: {k}\nSSE: {sse}\nCount of Iteration: {countIter}\n"
-          f"Centroid:\n{dfCentroid}\nNew Cluster: {newCluster}")
+          f"Centroid:\n{dfCentroid}\n\nDataSet with Clusters:\n{df}\n\n"
+          f"Confusion Matrix:\n{confusion_matrix(originalCluster, newCluster)}")
+
+
 

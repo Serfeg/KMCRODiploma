@@ -51,10 +51,10 @@ def cosineSimilarity(dataSetRow, centroid):
     firstSumInDown = 0
     secondSumInDown = 0
     for i in range(len(dataSetRow)):
-        sumInUp += dataSetRow[i] + centroid[i]
+        sumInUp += dataSetRow[i] * centroid[i]
         firstSumInDown += dataSetRow[i] ** 2
-        secondSumInDown += dataSetRow[i] ** 2
-    return sumInUp / (m.sqrt(firstSumInDown * m.sqrt(secondSumInDown)))
+        secondSumInDown += centroid[i] ** 2
+    return sumInUp / (m.sqrt(firstSumInDown) * m.sqrt(secondSumInDown)) if (m.sqrt(firstSumInDown) * m.sqrt(secondSumInDown)) != 0 else 0
 
 
 def countSseCos(cosSim):
@@ -69,9 +69,9 @@ def kMeansWithCos(dataSet, cluster, kNumber):
     k = 1
     while exits:
         centroid = [[findCentroid(dataSet, col, cluster, i + 1) for col in range(len(dataSet[0]))] for i in
-                    range(kNumber)]
+                        range(kNumber)]
         cosSim = [[cosineSimilarity(dataSet[j], centroid[i]) for i in range(len(centroid))] for j in
-                      range(len(dataSet))]
+                          range(len(dataSet))]
         newCluster = [cosSim[i].index(max(cosSim[i])) + 1 for i in range(len(cosSim))]
         if cluster == newCluster:
             exits = False
@@ -79,7 +79,7 @@ def kMeansWithCos(dataSet, cluster, kNumber):
             cluster = newCluster
             k += 1
     sse = countSseCos(cosSim)
-    return cluster, centroid, sse, k
+    return newCluster, centroid, sse, k
 
 
 def kMeansFitness(dataSet, centroid):
