@@ -54,7 +54,8 @@ def cosineSimilarity(dataSetRow, centroid):
         sumInUp += dataSetRow[i] * centroid[i]
         firstSumInDown += dataSetRow[i] ** 2
         secondSumInDown += centroid[i] ** 2
-    return sumInUp / (m.sqrt(firstSumInDown) * m.sqrt(secondSumInDown)) if (m.sqrt(firstSumInDown) * m.sqrt(secondSumInDown)) != 0 else 0
+    sumInDown = (m.sqrt(firstSumInDown) * m.sqrt(secondSumInDown))
+    return sumInUp / sumInDown if sumInDown != 0 else 0
 
 
 def countSseCos(cosSim):
