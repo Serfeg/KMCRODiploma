@@ -61,7 +61,7 @@ def cosineSimilarity(dataSetRow, centroid):
 def countSseCos(cosSim):
     sum = 0
     for i in range(len(cosSim)):
-        sum += min(cosSim[i])
+        sum += max(cosSim[i])
     return sum
 
 
