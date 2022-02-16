@@ -1,6 +1,11 @@
 import math as m
 
-
+"""
+    Здесь в файле указаны два способа расчёта метода к-средних. Использование классического способа
+    с расчётом евклидового расстояния. 
+    А также расчёт с косинусовым сходством
+"""
+# Метод к-средних с расчётом евклидового расстояния
 # Расчёт центроид
 def findCentroid(dataSet, dataSetColumn, cluster, kNumber):
     sum = 0
@@ -46,6 +51,7 @@ def kMeans(dataSet, cluster, kNumber):
     return cluster, centroid, sse, k
 
 
+# к-средние с косинусовым сходством
 def cosineSimilarity(dataSetRow, centroid):
     sumInUp = 0
     firstSumInDown = 0
@@ -83,6 +89,7 @@ def kMeansWithCos(dataSet, cluster, kNumber):
     return newCluster, centroid, sse, k
 
 
+# Fitness
 def distance(dataSetRow, centroid):
     sum = 0
     for i in range(len(dataSetRow)):
