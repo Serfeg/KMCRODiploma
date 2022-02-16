@@ -24,37 +24,43 @@ def makeDataSet(filename):
 
 
 if __name__ == "__main__":
-    #dataSet = makeDataSet("11_33_37_42.txt")
-    #df = pd.read_csv('11_33_37_42.txt', delimiter="\t")
+    dataSet = makeDataSet("11_33_37_42.txt")
+    df = pd.read_csv('11_33_37_42.txt', delimiter="\t")
     # Количество кластеров и точек
-    k = 2
+    k = 4
     # Рандомный кластер на длину датасета
-    #originalCluster = [r.randint(1, k) for i in range(len(dataSet))]
-    dataSet = [
-        [5, 0],
-        [5, 2],
-        [3, 1],
-        [0, 4],
-        [2, 1],
-        [4, 2],
-        [2, 2],
-        [2, 3],
-        [1, 3],
-        [5, 4]
-    ]
-    originalCluster = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2]
-    #newCluster, centroid, sse, countIter = kmeans.kMeans(dataSet, originalCluster, k)
-    originalCluster, centroid, sse, countIterKMeans = kmeans.kMeansWithCos(dataSet, originalCluster, k)
+    originalCluster = [r.randint(1, k) for i in range(len(dataSet))]
+    # dataSet = [
+    #     [5, 0],
+    #     [5, 2],
+    #     [3, 1],
+    #     [0, 4],
+    #     [2, 1],
+    #     [4, 2],
+    #     [2, 2],
+    #     [2, 3],
+    #     [1, 3],
+    #     [5, 4]
+    # ]
+    # originalCluster = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2]
+    #originalCluster, centroid, sse, countIter = kmeans.kMeans(dataSet, originalCluster, k)
+    newCluster, centroid, sse, countIterKMeans = kmeans.kMeansWithCos(dataSet, originalCluster, k)
     dfCentroid = pd.DataFrame()
 
-    #df['Cluster'] = newCluster
+    df['Cluster'] = newCluster
     for i in range(len(centroid)):
         dfCentroid['Cluster ' + str(i + 1)] = centroid[i]
-
-    fitness = kmeans.fitnessCosWithDist(dataSet, originalCluster, centroid, k)
-
+    countClusterKMeans = []
+    for i in range(k):
+        g = 0
+        for j in newCluster:
+            if j == i + 1:
+                g += 1
+        countClusterKMeans.append(g)
+    fitness = kmeans.fitnessCosWithDist(dataSet, newCluster, centroid, k)
+    print(fitness)
     countIterCRO = 0
-    newCluster = []
+
     while True:
         countIterCRO += 1
         croFitness = []
@@ -96,13 +102,21 @@ if __name__ == "__main__":
             fitness = max(croFitness)
             newCluster = croList[croFitness.index(max(croFitness))]
 
-        if originalCluster == newCluster:
+        if countIterCRO == 100:
             break
-        else:
-            originalCluster = newCluster
 
-    print(f"Count of Cluster: {k}\nSSE: {sse}\nCount of Iteration K-means: {countIterKMeans}\nCount of Iteration CRO:"
-          f" {countIterCRO}\nFitness: {fitness}\n"
-          f"Centroid:\n{dfCentroid}\nCluster: {newCluster}")
-          #f"\n\nDataSet with Clusters:\n{df}\n\n"
-          #f"Confusion Matrix:\n{confusion_matrix(originalCluster, newCluster)}")
+    countClusterCRO = []
+    for i in range(k):
+        g = 0
+        for j in newCluster:
+            if j == i + 1:
+                g += 1
+        countClusterCRO.append(g)
+
+    print(f"Count of Cluster: {k}\nSSE: {sse}\nCount of Iteration K-means: {countIterKMeans}\n"
+          f"Fitness: {fitness}\n"
+          f"Centroid:\n{dfCentroid}\n\n"
+          f"DataSet with Clusters:\n{df}\n\n"
+          f"Count Cluster K-means {countClusterKMeans}\n"
+          f"Count Cluster CRO: {countClusterCRO}\n"
+          f"Confusion Matrix:\n{confusion_matrix(originalCluster, newCluster)}")
