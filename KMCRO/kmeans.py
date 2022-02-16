@@ -67,8 +67,9 @@ def countSseCos(cosSim):
 
 def kMeansWithCos(dataSet, cluster, kNumber):
     exits = True
-    k = 1
+    k = 0
     while exits:
+        k += 1
         centroid = [[findCentroid(dataSet, col, cluster, i + 1) for col in range(len(dataSet[0]))] for i in
                         range(kNumber)]
         cosSim = [[cosineSimilarity(dataSet[j], centroid[i]) for i in range(len(centroid))] for j in
@@ -78,13 +79,27 @@ def kMeansWithCos(dataSet, cluster, kNumber):
             exits = False
         else:
             cluster = newCluster
-            k += 1
     sse = countSseCos(cosSim)
     return newCluster, centroid, sse, k
 
 
-def kMeansFitness(dataSet, centroid):
-    euclidDist = [[euclideanDistance(dataSet[j], centroid[i]) for i in range(len(centroid))] for j in
-                      range(len(dataSet))]
-    sse = countSse(euclidDist)
-    return sse
+def distance(dataSetRow, centroid):
+    sum = 0
+    for i in range(len(dataSetRow)):
+        sum += abs(dataSetRow[i] - centroid[i])
+    return m.sqrt(sum)
+
+
+def obj(dataSetRow, centroid):
+    return cosineSimilarity(dataSetRow, centroid) + (1 - distance(dataSetRow, centroid))
+
+
+def fitnessCosWithDist(dataSet, cluster, centroid, nK):
+    sumObj = 0
+    sumInUp = 0
+    for i in range(len(nK)):
+        for j in range(len(dataSet)):
+            if cluster[j] == i+1:
+                sumObj += obj(dataSet[j], centroid[i])
+        sumInUp += sumObj / nK[i]
+    return sumInUp / len(nK)
