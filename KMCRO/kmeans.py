@@ -107,7 +107,7 @@ def fitnessCosWithDist(dataSet, cluster, centroid, kNumber):
     for i in range(kNumber):
         k = 0
         for j in range(len(dataSet)):
-            if cluster[j] == i+1:
+            if cluster[j] == i + 1:
                 k += 1
                 sumObj += obj(dataSet[j], centroid[i])
         if k != 0:

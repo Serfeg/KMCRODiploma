@@ -27,7 +27,10 @@ if __name__ == "__main__":
     dataSet = makeDataSet("11_33_37_42.txt")
     df = pd.read_csv('11_33_37_42.txt', delimiter="\t")
     # Количество кластеров и точек
-    k = 4
+    print("Введите количество кластеров")
+    k = int(input())
+    print("Введите количество итераций для CRO")
+    iterCRO = int(input())
     # Рандомный кластер на длину датасета
     originalCluster = [r.randint(1, k) for i in range(len(dataSet))]
     # dataSet = [
@@ -50,6 +53,7 @@ if __name__ == "__main__":
     df['Cluster'] = newCluster
     for i in range(len(centroid)):
         dfCentroid['Cluster ' + str(i + 1)] = centroid[i]
+
     countClusterKMeans = []
     for i in range(k):
         g = 0
@@ -57,8 +61,8 @@ if __name__ == "__main__":
             if j == i + 1:
                 g += 1
         countClusterKMeans.append(g)
+
     fitness = kmeans.fitnessCosWithDist(dataSet, newCluster, centroid, k)
-    print(fitness)
     countIterCRO = 0
 
     while True:
@@ -102,7 +106,7 @@ if __name__ == "__main__":
             fitness = max(croFitness)
             newCluster = croList[croFitness.index(max(croFitness))]
 
-        if countIterCRO == 100:
+        if countIterCRO == iterCRO:
             break
 
     countClusterCRO = []
