@@ -54,7 +54,6 @@ def intermolecularSynthesis(lenDataSet, kNumber):
     originalPhi2 = [r.randint(1, kNumber) for _ in range(lenDataSet)]
     newPhi = []
     x = r.randint(0, lenDataSet-1)
-    print(x)
     for i in range(lenDataSet):
         if i <= x:
             newPhi.append(originalPhi1[i])
