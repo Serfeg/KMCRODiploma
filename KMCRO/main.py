@@ -24,34 +24,29 @@ def makeDataSet(filename):
 
 
 if __name__ == "__main__":
-    #dataSet = makeDataSet("11_33_37_42.txt")
-    #df = pd.read_csv('11_33_37_42.txt', delimiter="\t")
+    dataSet = makeDataSet("11_33_37_42.txt")
+    for i in range(len(dataSet)):
+        sum = 0
+        for j in range(len(dataSet[i])):
+            sum += dataSet[i][j] ** 2
+        sum = m.sqrt(sum)
+        for j in range(len(dataSet[i])):
+            dataSet[i][j] *= 1/sum
+    #dataSet = [[dataSet[i][j] / len(dataSet) for j in range(len(dataSet[i]))] for i in range(len(dataSet))]
+    df = pd.read_csv('11_33_37_42.txt', delimiter="\t")
     # Количество кластеров и точек
     print("Введите количество кластеров")
     k = int(input())
     print("Введите количество итераций для CRO")
     iterCRO = int(input())
+
     # Рандомный кластер на длину датасета
-    dataSet = [[r.randint(-10, 10) / 100 for i in range(2)] for j in range(100)]
     originalCluster = [r.randint(1, k) for i in range(len(dataSet))]
-    # dataSet = [
-    #     [5, 0],
-    #     [5, 2],
-    #     [3, 1],
-    #     [0, 4],
-    #     [2, 1],
-    #     [4, 2],
-    #     [2, 2],
-    #     [2, 3],
-    #     [1, 3],
-    #     [5, 4]
-    # ]
-    # originalCluster = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2]
+
     #originalCluster, centroid, sse, countIter = kmeans.kMeans(dataSet, originalCluster, k)
     newCluster, centroid, sse, countIterKMeans = kmeans.kMeansWithCos(dataSet, originalCluster, k)
     dfCentroid = pd.DataFrame()
 
-    #df['Cluster'] = newCluster
     for i in range(len(centroid)):
         dfCentroid['Cluster ' + str(i + 1)] = centroid[i]
 
@@ -64,6 +59,8 @@ if __name__ == "__main__":
         countClusterKMeans.append(g)
 
     fitness = kmeans.fitnessCosWithDist(dataSet, newCluster, centroid, k)
+    print(f"Fitness K-means: {fitness}")
+
     countIterCRO = 0
 
     while True:
@@ -118,10 +115,11 @@ if __name__ == "__main__":
                 g += 1
         countClusterCRO.append(g)
 
+    df['Cluster'] = newCluster
     print(f"Count of Cluster: {k}\nSSE: {sse}\nCount of Iteration K-means: {countIterKMeans}\n"
           f"Fitness: {fitness}\n"
           f"Centroid:\n{dfCentroid}\n\n"
-          #f"DataSet with Clusters:\n{df}\n\n"
+          f"DataSet with Clusters:\n{df}\n\n"
           f"Count Cluster K-means {countClusterKMeans}\n"
           f"Count Cluster CRO: {countClusterCRO}\n"
           f"Confusion Matrix:\n{confusion_matrix(originalCluster, newCluster)}")
