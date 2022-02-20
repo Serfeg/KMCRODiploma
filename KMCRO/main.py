@@ -117,7 +117,7 @@ if __name__ == "__main__":
 
     df['Cluster'] = newCluster
     print(f"Count of Cluster: {k}\nSSE: {sse}\nCount of Iteration K-means: {countIterKMeans}\n"
-          f"Fitness: {fitness}\n"
+          f"Fitness CRO: {fitness}\n"
           f"Centroid:\n{dfCentroid}\n\n"
           f"DataSet with Clusters:\n{df}\n\n"
           f"Count Cluster K-means {countClusterKMeans}\n"
