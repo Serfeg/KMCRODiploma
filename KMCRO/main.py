@@ -50,14 +50,6 @@ if __name__ == "__main__":
     for i in range(len(centroid)):
         dfCentroid['Cluster ' + str(i + 1)] = centroid[i]
 
-    countClusterKMeans = []
-    for i in range(k):
-        g = 0
-        for j in newCluster:
-            if j == i + 1:
-                g += 1
-        countClusterKMeans.append(g)
-
     fitness = kmeans.fitnessCosWithDist(dataSet, newCluster, centroid, k)
     print(f"Fitness K-means: {fitness}")
 
@@ -107,19 +99,10 @@ if __name__ == "__main__":
         if countIterCRO == iterCRO:
             break
 
-    countClusterCRO = []
-    for i in range(k):
-        g = 0
-        for j in newCluster:
-            if j == i + 1:
-                g += 1
-        countClusterCRO.append(g)
 
     df['Cluster'] = newCluster
     print(f"Count of Cluster: {k}\nSSE: {sse}\nCount of Iteration K-means: {countIterKMeans}\n"
-          f"Fitness: {fitness}\n"
+          f"Fitness CRO: {fitness}\n"
           f"Centroid:\n{dfCentroid}\n\n"
           f"DataSet with Clusters:\n{df}\n\n"
-          f"Count Cluster K-means {countClusterKMeans}\n"
-          f"Count Cluster CRO: {countClusterCRO}\n"
           f"Confusion Matrix:\n{confusion_matrix(originalCluster, newCluster)}")

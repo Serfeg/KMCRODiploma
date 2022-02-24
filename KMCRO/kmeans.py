@@ -38,19 +38,20 @@ def countSse(euclidDist):
 
 
 def kMeans(dataSet, cluster, kNumber):
-    exits = True
-    k = 1
-    while exits:
+    k = 0
+    while True:
+        k += 1
         centroid = [[findCentroid(dataSet, col, cluster, i + 1) for col in range(len(dataSet[0]))] for i in
                     range(kNumber)]
         euclidDist = [[euclideanDistance(dataSet[j], centroid[i]) for i in range(len(centroid))] for j in
                       range(len(dataSet))]
         newCluster = [euclidDist[i].index(min(euclidDist[i])) + 1 for i in range(len(euclidDist))]
+
         if cluster == newCluster:
-            exits = False
+            break
         else:
             cluster = newCluster
-            k += 1
+
     sse = countSse(euclidDist)
     return cluster, centroid, sse, k
 
@@ -64,7 +65,7 @@ def cosineSimilarity(dataSetRow, centroid):
         sumInUp += dataSetRow[i] * centroid[i]
         firstSumInDown += dataSetRow[i] ** 2
         secondSumInDown += centroid[i] ** 2
-    sumInDown = (m.sqrt(firstSumInDown) * m.sqrt(secondSumInDown))
+    sumInDown = m.sqrt(firstSumInDown) * m.sqrt(secondSumInDown)
     return sumInUp / sumInDown if sumInDown != 0 else 0
 
 
@@ -76,19 +77,20 @@ def countSseCos(cosSim):
 
 
 def kMeansWithCos(dataSet, cluster, kNumber):
-    exits = True
     k = 0
-    while exits:
+    while True:
         k += 1
         centroid = [[findCentroid(dataSet, col, cluster, i + 1) for col in range(len(dataSet[0]))] for i in
                         range(kNumber)]
         cosSim = [[cosineSimilarity(dataSet[j], centroid[i]) for i in range(len(centroid))] for j in
                           range(len(dataSet))]
         newCluster = [cosSim[i].index(max(cosSim[i])) + 1 for i in range(len(cosSim))]
+
         if cluster == newCluster:
-            exits = False
+            break
         else:
             cluster = newCluster
+
     sse = countSseCos(cosSim)
     return newCluster, centroid, sse, k
 
