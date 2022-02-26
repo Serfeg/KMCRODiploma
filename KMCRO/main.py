@@ -34,17 +34,20 @@ if __name__ == "__main__":
             dataSet[i][j] *= 1/sum
     #dataSet = [[dataSet[i][j] / len(dataSet) for j in range(len(dataSet[i]))] for i in range(len(dataSet))]
     df = pd.read_csv('11_33_37_42.txt', delimiter="\t")
+
     # Количество кластеров и точек
     print("Введите количество кластеров")
     k = int(input())
     print("Введите количество итераций для CRO")
     iterCRO = int(input())
 
+
     # Рандомный кластер на длину датасета
     originalCluster = [r.randint(1, k) for i in range(len(dataSet))]
 
     #originalCluster, centroid, sse, countIter = kmeans.kMeans(dataSet, originalCluster, k)
     newCluster, centroid, sse, countIterKMeans = kmeans.kMeansWithCos(dataSet, originalCluster, k)
+
     dfCentroid = pd.DataFrame()
 
     for i in range(len(centroid)):
