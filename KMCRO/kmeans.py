@@ -119,3 +119,31 @@ def fitnessCosWithDist(dataSet, cluster, centroid, kNumber):
         if k != 0:
             sumInUp += sumObj / k
     return sumInUp / kNumber if k != 0 else 0
+
+
+def fitnessCos(dataSet, cluster, centroid, kNumber):
+    sumObj = 0
+    sumInUp = 0
+    for i in range(kNumber):
+        k = 0
+        for j in range(len(dataSet)):
+            if cluster[j] == i + 1:
+                k += 1
+                sumObj += cosineSimilarity(dataSet[j], centroid[i])
+        if k != 0:
+            sumInUp += sumObj / k
+    return sumInUp / kNumber if k != 0 else 0
+
+
+def fitnessEuclidDist(dataSet, cluster, centroid, kNumber):
+    sumObj = 0
+    sumInUp = 0
+    for i in range(kNumber):
+        k = 0
+        for j in range(len(dataSet)):
+            if cluster[j] == i + 1:
+                k += 1
+                sumObj += euclideanDistance(dataSet[j], centroid[i])
+        if k != 0:
+            sumInUp += sumObj / k
+    return sumInUp / kNumber if k != 0 else 0
