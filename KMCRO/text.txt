@@ -15,328 +15,712 @@
 
 Итерация №1
 Начальные центроиды
-C1	-10	-9	
-C2	0	8	
+C1	7	-8	
+C2	3	-2	
 
 CosineSimilarity
 Итоговые центроиды
 C1	0	0	
 C2	2.9	2.2	
 
+Полученные кластера
+2	2	2	2	2	2	2	2	2	2	
+
 SSE: 9.03841859513275
 
 Fitness: 0.4519209297566375
-singleMoleculeCollision fitness: 0.448284496454408
-singleMoleculeDecomposition fitness: 0.4540613686430747
-intermolecularCollision fitness: 0.44856921200951505
-intermolecularSynthesis fitness: 0.47074236900259975
+singleMoleculeCollision fitness: 0.4173429979422263
+singleMoleculeDecomposition fitness: 0.4634330181267381
+intermolecularCollision fitness: 0.4643311872713508
+intermolecularSynthesis fitness: 0.4301308294232613
 
 EuclidDist
 Итоговые центроиды
 C1	0	0	
 C2	2.9	2.2	
 
+Полученные кластера
+2	2	2	2	2	2	2	2	2	2	
+
 SSE: 44.5
 
 Fitness: 2.225
-singleMoleculeCollision fitness: 9.791666666666666
-singleMoleculeDecomposition fitness: 12.891666666666666
-intermolecularCollision fitness: 8.783333333333333
-intermolecularSynthesis fitness: 10.739285714285714
+singleMoleculeCollision fitness: 10.85
+singleMoleculeDecomposition fitness: 11.945
+intermolecularCollision fitness: 11.205
+intermolecularSynthesis fitness: 10.184999999999999
 
 Cos+Dist
 Итоговые центроиды
 C1	0	0	
 C2	2.9	2.2	
 
+Полученные кластера
+2	2	2	2	2	2	2	2	2	2	
+
 SSE: 3.5801037397652395
 
 Fitness: 0.17900518698826198
-singleMoleculeCollision fitness: -0.41286849057986597
-singleMoleculeDecomposition fitness: -0.4239741827639144
-intermolecularCollision fitness: -0.39658815446540013
-intermolecularSynthesis fitness: -0.40173893608314737
+singleMoleculeCollision fitness: -0.5924672127212346
+singleMoleculeDecomposition fitness: -0.35203211813507795
+intermolecularCollision fitness: -0.40641023541699783
+intermolecularSynthesis fitness: -0.5907814395550669
 
 Итерация №2
 Начальные центроиды
-C1	0	-10	
-C2	10	-9	
+C1	-2	-8	
+C2	9	-5	
 
 CosineSimilarity
 Итоговые центроиды
 C1	0	0	
 C2	2.9	2.2	
 
+Полученные кластера
+2	2	2	2	2	2	2	2	2	2	
+
 SSE: 9.03841859513275
 
 Fitness: 0.4519209297566375
-singleMoleculeCollision fitness: 0.43330311549931055
-singleMoleculeDecomposition fitness: 0.4448908644591796
-intermolecularCollision fitness: 0.4866500237875067
-intermolecularSynthesis fitness: 0.44393139134416326
+singleMoleculeCollision fitness: 0.4610676238524912
+singleMoleculeDecomposition fitness: 0.46995842973559104
+intermolecularCollision fitness: 0.4608208086355473
+intermolecularSynthesis fitness: 0.4772443832458028
 
 EuclidDist
 Итоговые центроиды
-C1	1.6666666666666667	2.3333333333333335	
-C2	4.75	2.0	
+C1	1.25	3.0	
+C2	4.0	1.6666666666666667	
 
-SSE: 21.416666666666668
+Полученные кластера
+2	2	2	1	2	2	1	1	1	2	
 
-Fitness: 2.1493055555555554
-singleMoleculeCollision fitness: 2.192361111111111
-singleMoleculeDecomposition fitness: 7.459027777777777
-intermolecularCollision fitness: 8.434027777777777
-intermolecularSynthesis fitness: 9.626488095238095
+SSE: 22.083333333333332
+
+Fitness: 2.0381944444444446
+singleMoleculeCollision fitness: 10.753472222222221
+singleMoleculeDecomposition fitness: 6.769345238095238
+intermolecularCollision fitness: 9.628472222222221
+intermolecularSynthesis fitness: 9.630456349206348
 
 Cos+Dist
 Итоговые центроиды
 C1	1.0	3.3333333333333335	
 C2	3.7142857142857144	1.7142857142857142	
 
+Полученные кластера
+2	2	2	1	2	2	2	1	1	2	
+
 SSE: 6.900120247367058
 
 Fitness: 0.7681679966322363
-singleMoleculeCollision fitness: -0.02303630002176038
-singleMoleculeDecomposition fitness: 0.4130711210256423
-intermolecularCollision fitness: 0.22289863580813563
-intermolecularSynthesis fitness: 0.053016919112991945
+singleMoleculeCollision fitness: 0.040939994382431094
+singleMoleculeDecomposition fitness: 0.47545025155911147
+intermolecularCollision fitness: 0.28392673189468876
+intermolecularSynthesis fitness: 0.03527729113524359
 
 Итерация №3
 Начальные центроиды
-C1	-9	-2	
-C2	-2	0	
+C1	-7	-4	
+C2	-1	-7	
 
 CosineSimilarity
 Итоговые центроиды
-C1	3.8	1.2	
-C2	2.0	3.2	
+C1	1.0	3.3333333333333335	
+C2	3.7142857142857144	1.7142857142857142	
 
-SSE: 9.663473429977087
+Полученные кластера
+2	2	2	1	2	2	2	1	1	2	
 
-Fitness: 0.9663473429977085
-singleMoleculeCollision fitness: 0.8720470243410405
-singleMoleculeDecomposition fitness: 0.8778612577056828
-intermolecularCollision fitness: 0.8491974687127196
-intermolecularSynthesis fitness: 0.849545401819777
+SSE: 9.722363580016674
+
+Fitness: 0.9719515924219407
+singleMoleculeCollision fitness: 0.8040597904748257
+singleMoleculeDecomposition fitness: 0.7696056741995733
+intermolecularCollision fitness: 0.8303026422220072
+intermolecularSynthesis fitness: 0.8418972402524109
+
+EuclidDist
+Итоговые центроиды
+C1	1.25	3.0	
+C2	4.0	1.6666666666666667	
+
+Полученные кластера
+2	2	2	1	2	2	1	1	1	2	
+
+SSE: 22.083333333333332
+
+Fitness: 2.0381944444444446
+singleMoleculeCollision fitness: 6.636805555555556
+singleMoleculeDecomposition fitness: 9.57638888888889
+intermolecularCollision fitness: 5.884424603174603
+intermolecularSynthesis fitness: 8.536805555555555
+
+Cos+Dist
+Итоговые центроиды
+C1	1.0	3.3333333333333335	
+C2	3.7142857142857144	1.7142857142857142	
+
+Полученные кластера
+2	2	2	1	2	2	2	1	1	2	
+
+SSE: 6.900120247367058
+
+Fitness: 0.7681679966322363
+singleMoleculeCollision fitness: -0.0911369500151899
+singleMoleculeDecomposition fitness: 0.29779547277975016
+intermolecularCollision fitness: 0.3049670581929047
+intermolecularSynthesis fitness: 0.4134696505047166
+
+Итерация №4
+Начальные центроиды
+C1	8	6	
+C2	0	6	
+
+CosineSimilarity
+Итоговые центроиды
+C1	3.7142857142857144	1.7142857142857142	
+C2	1.0	3.3333333333333335	
+
+Полученные кластера
+1	1	1	2	1	1	1	2	2	1	
+
+SSE: 9.722363580016674
+
+Fitness: 0.9719515924219407
+singleMoleculeCollision fitness: 0.8369688140369631
+singleMoleculeDecomposition fitness: 0.8509667173116013
+intermolecularCollision fitness: 0.7578095885125149
+intermolecularSynthesis fitness: 0.8479475535273957
+
+EuclidDist
+Итоговые центроиды
+C1	4.75	2.0	
+C2	1.6666666666666667	2.3333333333333335	
+
+Полученные кластера
+1	1	2	2	2	1	2	2	2	1	
+
+SSE: 21.416666666666668
+
+Fitness: 2.1493055555555554
+singleMoleculeCollision fitness: 5.392361111111111
+singleMoleculeDecomposition fitness: 6.166170634920634
+intermolecularCollision fitness: 7.253472222222221
+intermolecularSynthesis fitness: 8.075694444444444
+
+Cos+Dist
+Итоговые центроиды
+C1	4.4	1.8	
+C2	1.4	2.6	
+
+Полученные кластера
+1	1	1	2	2	1	2	2	2	1	
+
+SSE: 6.995412587975338
+
+Fitness: 0.6995412587975339
+singleMoleculeCollision fitness: -0.027477460898734603
+singleMoleculeDecomposition fitness: 0.3810645402666673
+intermolecularCollision fitness: 0.23046962390909292
+intermolecularSynthesis fitness: 0.4769920402830227
+
+Итерация №5
+Начальные центроиды
+C1	-8	6	
+C2	-4	3	
+
+CosineSimilarity
+Итоговые центроиды
+C1	2.9	2.2	
+C2	0	0	
+
+Полученные кластера
+1	1	1	1	1	1	1	1	1	1	
+
+SSE: 9.03841859513275
+
+Fitness: 0.4519209297566375
+singleMoleculeCollision fitness: 0.43591660247084113
+singleMoleculeDecomposition fitness: 0.4729340608113052
+intermolecularCollision fitness: 0.4648581076896415
+intermolecularSynthesis fitness: 0.39897775359759086
 
 EuclidDist
 Итоговые центроиды
 C1	0	0	
 C2	2.9	2.2	
 
+Полученные кластера
+2	2	2	2	2	2	2	2	2	2	
+
 SSE: 44.5
 
 Fitness: 2.225
-singleMoleculeCollision fitness: 11.891666666666666
-singleMoleculeDecomposition fitness: 11.80595238095238
-intermolecularCollision fitness: 14.534523809523808
-intermolecularSynthesis fitness: 10.086904761904762
+singleMoleculeCollision fitness: 12.758333333333333
+singleMoleculeDecomposition fitness: 11.2
+intermolecularCollision fitness: 11.716666666666667
+intermolecularSynthesis fitness: 11.975
 
 Cos+Dist
 Итоговые центроиды
 C1	0	0	
 C2	2.9	2.2	
 
+Полученные кластера
+2	2	2	2	2	2	2	2	2	2	
+
 SSE: 3.5801037397652395
 
 Fitness: 0.17900518698826198
-singleMoleculeCollision fitness: -0.5602837508306184
-singleMoleculeDecomposition fitness: -0.23842471678590038
-intermolecularCollision fitness: -0.47182740119672817
-intermolecularSynthesis fitness: -0.46626760569479364
+singleMoleculeCollision fitness: -0.41439496266545117
+singleMoleculeDecomposition fitness: -0.3052918106918312
+intermolecularCollision fitness: -0.4341273358461927
+intermolecularSynthesis fitness: -0.4820125822917871
 
-Итерация №4
+Итерация №6
 Начальные центроиды
-C1	0	-1	
-C2	-9	7	
+C1	-10	-10	
+C2	-8	-3	
 
 CosineSimilarity
 Итоговые центроиды
 C1	3.8	1.2	
 C2	2.0	3.2	
 
+Полученные кластера
+1	1	1	2	1	1	2	2	2	2	
+
 SSE: 9.663473429977087
 
 Fitness: 0.9663473429977085
-singleMoleculeCollision fitness: 0.8228960920040789
-singleMoleculeDecomposition fitness: 0.9097762407435328
-intermolecularCollision fitness: 0.8538948421145083
-intermolecularSynthesis fitness: 0.8478604412732518
+singleMoleculeCollision fitness: 0.7503510663783961
+singleMoleculeDecomposition fitness: 0.9271572069365639
+intermolecularCollision fitness: 0.8780056841828088
+intermolecularSynthesis fitness: 0.8255976177077899
+
+EuclidDist
+Итоговые центроиды
+C1	0	0	
+C2	2.9	2.2	
+
+Полученные кластера
+2	2	2	2	2	2	2	2	2	2	
+
+SSE: 44.5
+
+Fitness: 2.225
+singleMoleculeCollision fitness: 9.605
+singleMoleculeDecomposition fitness: 13.725
+intermolecularCollision fitness: 11.70595238095238
+intermolecularSynthesis fitness: 9.925
+
+Cos+Dist
+Итоговые центроиды
+C1	0	0	
+C2	2.9	2.2	
+
+Полученные кластера
+2	2	2	2	2	2	2	2	2	2	
+
+SSE: 3.5801037397652395
+
+Fitness: 0.17900518698826198
+singleMoleculeCollision fitness: -0.5924672127212346
+singleMoleculeDecomposition fitness: -0.39523255929722906
+intermolecularCollision fitness: -0.33804949456834044
+intermolecularSynthesis fitness: -0.6075017719714926
+
+Итерация №7
+Начальные центроиды
+C1	2	-9	
+C2	8	-6	
+
+CosineSimilarity
+Итоговые центроиды
+C1	0	0	
+C2	2.9	2.2	
+
+Полученные кластера
+2	2	2	2	2	2	2	2	2	2	
+
+SSE: 9.03841859513275
+
+Fitness: 0.4519209297566375
+singleMoleculeCollision fitness: 0.45506497844110433
+singleMoleculeDecomposition fitness: 0.4616301035330162
+intermolecularCollision fitness: 0.4458089865125617
+intermolecularSynthesis fitness: 0.43861496960971164
+
+EuclidDist
+Итоговые центроиды
+C1	0	0	
+C2	2.9	2.2	
+
+Полученные кластера
+2	2	2	2	2	2	2	2	2	2	
+
+SSE: 44.5
+
+Fitness: 2.225
+singleMoleculeCollision fitness: 10.645
+singleMoleculeDecomposition fitness: 10.8625
+intermolecularCollision fitness: 13.825000000000001
+intermolecularSynthesis fitness: 9.575
+
+Cos+Dist
+Итоговые центроиды
+C1	0	0	
+C2	2.9	2.2	
+
+Полученные кластера
+2	2	2	2	2	2	2	2	2	2	
+
+SSE: 3.5801037397652395
+
+Fitness: 0.17900518698826198
+singleMoleculeCollision fitness: -0.5458374035166815
+singleMoleculeDecomposition fitness: -0.2593489538815331
+intermolecularCollision fitness: -0.3631338139056607
+intermolecularSynthesis fitness: -0.31545013377507447
+
+Итерация №8
+Начальные центроиды
+C1	-9	-6	
+C2	8	3	
+
+CosineSimilarity
+Итоговые центроиды
+C1	0	0	
+C2	2.9	2.2	
+
+Полученные кластера
+2	2	2	2	2	2	2	2	2	2	
+
+SSE: 9.03841859513275
+
+Fitness: 0.4519209297566375
+singleMoleculeCollision fitness: 0.4462404971438768
+singleMoleculeDecomposition fitness: 0.4672478905427458
+intermolecularCollision fitness: 0.48363597463156366
+intermolecularSynthesis fitness: 0.4548471590793046
+
+EuclidDist
+Итоговые центроиды
+C1	0	0	
+C2	2.9	2.2	
+
+Полученные кластера
+2	2	2	2	2	2	2	2	2	2	
+
+SSE: 44.5
+
+Fitness: 2.225
+singleMoleculeCollision fitness: 13.982142857142858
+singleMoleculeDecomposition fitness: 11.141666666666666
+intermolecularCollision fitness: 12.95
+intermolecularSynthesis fitness: 12.965
+
+Cos+Dist
+Итоговые центроиды
+C1	0	0	
+C2	2.9	2.2	
+
+Полученные кластера
+2	2	2	2	2	2	2	2	2	2	
+
+SSE: 3.5801037397652395
+
+Fitness: 0.17900518698826198
+singleMoleculeCollision fitness: -0.5883348934867073
+singleMoleculeDecomposition fitness: -0.3689869788622512
+intermolecularCollision fitness: -0.21398047628002564
+intermolecularSynthesis fitness: -0.3925878850665478
+
+Итерация №9
+Начальные центроиды
+C1	7	1	
+C2	-1	-4	
+
+CosineSimilarity
+Итоговые центроиды
+C1	2.9	2.2	
+C2	0	0	
+
+Полученные кластера
+1	1	1	1	1	1	1	1	1	1	
+
+SSE: 9.03841859513275
+
+Fitness: 0.4519209297566375
+singleMoleculeCollision fitness: 0.4595391340033001
+singleMoleculeDecomposition fitness: 0.45727654516134836
+intermolecularCollision fitness: 0.4507773924070776
+intermolecularSynthesis fitness: 0.4695950904974963
 
 EuclidDist
 Итоговые центроиды
 C1	2.9	2.2	
 C2	0	0	
 
+Полученные кластера
+1	1	1	1	1	1	1	1	1	1	
+
 SSE: 44.5
 
 Fitness: 2.225
-singleMoleculeCollision fitness: 9.533333333333333
-singleMoleculeDecomposition fitness: 10.95
-intermolecularCollision fitness: 10.783333333333333
-intermolecularSynthesis fitness: 12.741666666666667
+singleMoleculeCollision fitness: 9.808333333333334
+singleMoleculeDecomposition fitness: 11.282142857142858
+intermolecularCollision fitness: 13.265
+intermolecularSynthesis fitness: 10.433333333333334
+
+Cos+Dist
+Итоговые центроиды
+C1	2.9	2.2	
+C2	0	0	
+
+Полученные кластера
+1	1	1	1	1	1	1	1	1	1	
+
+SSE: 3.5801037397652395
+
+Fitness: 0.17900518698826198
+singleMoleculeCollision fitness: -0.48673987397732466
+singleMoleculeDecomposition fitness: -0.22052771558633727
+intermolecularCollision fitness: -0.29478260223305663
+intermolecularSynthesis fitness: -0.6637792554011834
+
+Итерация №10
+Начальные центроиды
+C1	2	9	
+C2	6	-1	
+
+CosineSimilarity
+Итоговые центроиды
+C1	2.0	3.2	
+C2	3.8	1.2	
+
+Полученные кластера
+2	2	2	1	2	2	1	1	1	1	
+
+SSE: 9.663473429977087
+
+Fitness: 0.9663473429977085
+singleMoleculeCollision fitness: 0.8808454940341652
+singleMoleculeDecomposition fitness: 0.8982308021225942
+intermolecularCollision fitness: 0.8095204155899807
+intermolecularSynthesis fitness: 0.8291549087631516
+
+EuclidDist
+Итоговые центроиды
+C1	1.25	3.0	
+C2	4.0	1.6666666666666667	
+
+Полученные кластера
+2	2	2	1	2	2	1	1	1	2	
+
+SSE: 22.083333333333332
+
+Fitness: 2.0381944444444446
+singleMoleculeCollision fitness: 2.795138888888889
+singleMoleculeDecomposition fitness: 5.261408730158729
+intermolecularCollision fitness: 8.70486111111111
+intermolecularSynthesis fitness: 6.07013888888889
+
+Cos+Dist
+Итоговые центроиды
+C1	1.25	3.0	
+C2	4.0	1.6666666666666667	
+
+Полученные кластера
+2	2	2	1	2	2	1	1	1	2	
+
+SSE: 7.3994454845642
+
+Fitness: 0.7681863045756204
+singleMoleculeCollision fitness: 0.051726413112532385
+singleMoleculeDecomposition fitness: 0.5559840339717916
+intermolecularCollision fitness: 0.09851507811186089
+intermolecularSynthesis fitness: 0.4534348510794163
+
+Итерация №11
+Начальные центроиды
+C1	9	-6	
+C2	4	-8	
+
+CosineSimilarity
+Итоговые центроиды
+C1	2.9	2.2	
+C2	0	0	
+
+Полученные кластера
+1	1	1	1	1	1	1	1	1	1	
+
+SSE: 9.03841859513275
+
+Fitness: 0.4519209297566375
+singleMoleculeCollision fitness: 0.4678807699678563
+singleMoleculeDecomposition fitness: 0.4647396552001763
+intermolecularCollision fitness: 0.45418116328009805
+intermolecularSynthesis fitness: 0.4633562248473369
+
+EuclidDist
+Итоговые центроиды
+C1	4.75	2.0	
+C2	1.6666666666666667	2.3333333333333335	
+
+Полученные кластера
+1	1	2	2	2	1	2	2	2	1	
+
+SSE: 21.416666666666668
+
+Fitness: 2.1493055555555554
+singleMoleculeCollision fitness: 9.297123015873016
+singleMoleculeDecomposition fitness: 6.392361111111111
+intermolecularCollision fitness: 8.425694444444444
+intermolecularSynthesis fitness: 4.175694444444444
 
 Cos+Dist
 Итоговые центроиды
 C1	3.7142857142857144	1.7142857142857142	
 C2	1.0	3.3333333333333335	
 
-SSE: 6.900120247367058
-
-Fitness: 0.7681679966322363
-singleMoleculeCollision fitness: 0.19418378356410423
-singleMoleculeDecomposition fitness: 0.06089684379606835
-intermolecularCollision fitness: 0.17994177218899268
-intermolecularSynthesis fitness: 0.4495306562711919
-
-Итерация №5
-Начальные центроиды
-C1	-7	-2	
-C2	4	-3	
-
-CosineSimilarity
-Итоговые центроиды
-C1	1.0	3.3333333333333335	
-C2	3.7142857142857144	1.7142857142857142	
-
-SSE: 9.722363580016674
-
-Fitness: 0.9719515924219407
-singleMoleculeCollision fitness: 0.7828036876162459
-singleMoleculeDecomposition fitness: 0.8354239822465339
-intermolecularCollision fitness: 0.7776263829177945
-intermolecularSynthesis fitness: 0.9067598233716092
-
-EuclidDist
-Итоговые центроиды
-C1	0	0	
-C2	2.9	2.2	
-
-SSE: 44.5
-
-Fitness: 2.225
-singleMoleculeCollision fitness: 11.2375
-singleMoleculeDecomposition fitness: 9.225
-intermolecularCollision fitness: 11.867857142857144
-intermolecularSynthesis fitness: 9.620238095238095
-
-Cos+Dist
-Итоговые центроиды
-C1	1.0	3.3333333333333335	
-C2	3.7142857142857144	1.7142857142857142	
+Полученные кластера
+1	1	1	2	1	1	1	2	2	1	
 
 SSE: 6.900120247367058
 
 Fitness: 0.7681679966322363
-singleMoleculeCollision fitness: 0.15495060299264518
-singleMoleculeDecomposition fitness: 0.15871208929523506
-intermolecularCollision fitness: 0.8832780563118903
-intermolecularSynthesis fitness: 0.11866514647085084
+singleMoleculeCollision fitness: -0.28160191045776023
+singleMoleculeDecomposition fitness: 0.04275340481498223
+intermolecularCollision fitness: 0.4465774962923089
+intermolecularSynthesis fitness: 0.17282785880760204
 
-Итерация №6
+Итерация №12
 Начальные центроиды
-C1	3	-10	
-C2	2	5	
-
-CosineSimilarity
-Итоговые центроиды
-C1	0	0	
-C2	2.9	2.2	
-
-SSE: 9.03841859513275
-
-Fitness: 0.4519209297566375
-singleMoleculeCollision fitness: 0.43414511984775833
-singleMoleculeDecomposition fitness: 0.4532547660042602
-intermolecularCollision fitness: 0.483165001222994
-intermolecularSynthesis fitness: 0.4635399109864467
-
-EuclidDist
-Итоговые центроиды
-C1	0	0	
-C2	2.9	2.2	
-
-SSE: 44.5
-
-Fitness: 2.225
-singleMoleculeCollision fitness: 14.244047619047619
-singleMoleculeDecomposition fitness: 16.725
-intermolecularCollision fitness: 11.725
-intermolecularSynthesis fitness: 13.069444444444445
-
-Cos+Dist
-Итоговые центроиды
-C1	0	0	
-C2	2.9	2.2	
-
-SSE: 3.5801037397652395
-
-Fitness: 0.17900518698826198
-singleMoleculeCollision fitness: -0.2593489538815331
-singleMoleculeDecomposition fitness: -0.22995162230423272
-intermolecularCollision fitness: -0.262846969561646
-intermolecularSynthesis fitness: -0.3969027968510858
-
-Итерация №7
-Начальные центроиды
-C1	-10	-2	
-C2	0	-6	
-
-CosineSimilarity
-Итоговые центроиды
-C1	1.0	3.3333333333333335	
-C2	3.7142857142857144	1.7142857142857142	
-
-SSE: 9.722363580016674
-
-Fitness: 0.9719515924219407
-singleMoleculeCollision fitness: 0.8543488438687333
-singleMoleculeDecomposition fitness: 0.8497428701198158
-intermolecularCollision fitness: 0.8979343767263779
-intermolecularSynthesis fitness: 0.6721274471859082
-
-EuclidDist
-Итоговые центроиды
-C1	0	0	
-C2	2.9	2.2	
-
-SSE: 44.5
-
-Fitness: 2.225
-singleMoleculeCollision fitness: 15.425
-singleMoleculeDecomposition fitness: 13.245000000000001
-intermolecularCollision fitness: 11.05
-intermolecularSynthesis fitness: 11.239285714285714
-
-Cos+Dist
-Итоговые центроиды
-C1	0	0	
-C2	2.9	2.2	
-
-SSE: 3.5801037397652395
-
-Fitness: 0.17900518698826198
-singleMoleculeCollision fitness: -0.45431032925767245
-singleMoleculeDecomposition fitness: -0.29303687918437504
-intermolecularCollision fitness: -0.2908649678984169
-intermolecularSynthesis fitness: -0.4594309066571267
-
-Итерация №8
-Начальные центроиды
-C1	9	0	
-C2	5	0	
+C1	-1	10	
+C2	-10	8	
 
 CosineSimilarity
 Итоговые центроиды
 C1	2.9	2.2	
 C2	0	0	
 
+Полученные кластера
+1	1	1	1	1	1	1	1	1	1	
+
 SSE: 9.03841859513275
 
 Fitness: 0.4519209297566375
-singleMoleculeCollision fitness: 0.46328530696491477
-singleMoleculeDecomposition fitness: 0.44030325431654754
-intermolecularCollision fitness: 0.4719797563597827
+singleMoleculeCollision fitness: 0.44244642761586334
+singleMoleculeDecomposition fitness: 0.47481995421438733
+intermolecularCollision fitness: 0.46316717622651793
+intermolecularSynthesis fitness: 0.473420659296053
+
+EuclidDist
+Итоговые центроиды
+C1	2.9	2.2	
+C2	0	0	
+
+Полученные кластера
+1	1	1	1	1	1	1	1	1	1	
+
+SSE: 44.5
+
+Fitness: 2.225
+singleMoleculeCollision fitness: 10.329761904761904
+singleMoleculeDecomposition fitness: 11.225
+intermolecularCollision fitness: 10.225
+intermolecularSynthesis fitness: 15.425
+
+Cos+Dist
+Итоговые центроиды
+C1	2.9	2.2	
+C2	0	0	
+
+Полученные кластера
+1	1	1	1	1	1	1	1	1	1	
+
+SSE: 3.5801037397652395
+
+Fitness: 0.17900518698826198
+singleMoleculeCollision fitness: -0.30747461287007133
+singleMoleculeDecomposition fitness: -0.3640019972982456
+intermolecularCollision fitness: -0.5030004236808499
+intermolecularSynthesis fitness: -0.4383576036818928
+
+Итерация №13
+Начальные центроиды
+C1	8	6	
+C2	6	-10	
+
+CosineSimilarity
+Итоговые центроиды
+C1	2.9	2.2	
+C2	0	0	
+
+Полученные кластера
+1	1	1	1	1	1	1	1	1	1	
+
+SSE: 9.03841859513275
+
+Fitness: 0.4519209297566375
+singleMoleculeCollision fitness: 0.449060211833176
+singleMoleculeDecomposition fitness: 0.47580532515833934
+intermolecularCollision fitness: 0.4600887759650689
+intermolecularSynthesis fitness: 0.463547248004342
+
+EuclidDist
+Итоговые центроиды
+C1	2.9	2.2	
+C2	0	0	
+
+Полученные кластера
+1	1	1	1	1	1	1	1	1	1	
+
+SSE: 44.5
+
+Fitness: 2.225
+singleMoleculeCollision fitness: 13.783333333333335
+singleMoleculeDecomposition fitness: 14.7
+intermolecularCollision fitness: 12.133333333333333
+intermolecularSynthesis fitness: 8.366666666666667
+
+Cos+Dist
+Итоговые центроиды
+C1	2.9	2.2	
+C2	0	0	
+
+Полученные кластера
+1	1	1	1	1	1	1	1	1	1	
+
+SSE: 3.5801037397652395
+
+Fitness: 0.17900518698826198
+singleMoleculeCollision fitness: -0.4570451790957252
+singleMoleculeDecomposition fitness: -0.5261931063010422
+intermolecularCollision fitness: -0.4378116376651715
+intermolecularSynthesis fitness: -0.44128600155774583
+
+Итерация №14
+Начальные центроиды
+C1	-10	-4	
+C2	-7	9	
+
+CosineSimilarity
+Итоговые центроиды
+C1	0	0	
+C2	2.9	2.2	
+
+Полученные кластера
+2	2	2	2	2	2	2	2	2	2	
+
+SSE: 9.03841859513275
+
+Fitness: 0.4519209297566375
+singleMoleculeCollision fitness: 0.42652931693561513
+singleMoleculeDecomposition fitness: 0.44393139134416326
+intermolecularCollision fitness: 0.46320534396054236
 intermolecularSynthesis fitness: 0.44582313369273513
 
 EuclidDist
@@ -344,426 +728,566 @@ EuclidDist
 C1	0	0	
 C2	2.9	2.2	
 
+Полученные кластера
+2	2	2	2	2	2	2	2	2	2	
+
 SSE: 44.5
 
 Fitness: 2.225
-singleMoleculeCollision fitness: 13.545000000000002
-singleMoleculeDecomposition fitness: 10.8625
-intermolecularCollision fitness: 10.045
-intermolecularSynthesis fitness: 10.891666666666666
+singleMoleculeCollision fitness: 11.972619047619048
+singleMoleculeDecomposition fitness: 9.391666666666667
+intermolecularCollision fitness: 14.733333333333334
+intermolecularSynthesis fitness: 16.04404761904762
 
 Cos+Dist
 Итоговые центроиды
 C1	0	0	
 C2	2.9	2.2	
 
+Полученные кластера
+2	2	2	2	2	2	2	2	2	2	
+
 SSE: 3.5801037397652395
 
 Fitness: 0.17900518698826198
-singleMoleculeCollision fitness: -0.47551965572512456
-singleMoleculeDecomposition fitness: -0.5400588591343053
-intermolecularCollision fitness: -0.18142595650646626
-intermolecularSynthesis fitness: -0.32061184019540767
+singleMoleculeCollision fitness: -0.584140821397904
+singleMoleculeDecomposition fitness: -0.2981339901034897
+intermolecularCollision fitness: -0.37870419321395
+intermolecularSynthesis fitness: -0.45262286052142653
 
-Итерация №9
+Итерация №15
 Начальные центроиды
-C1	-6	2	
-C2	-3	-5	
+C1	-9	-8	
+C2	-9	2	
 
 CosineSimilarity
 Итоговые центроиды
-C1	2.0	3.2	
-C2	3.8	1.2	
+C1	3.8	1.2	
+C2	2.0	3.2	
+
+Полученные кластера
+1	1	1	2	1	1	2	2	2	2	
 
 SSE: 9.663473429977087
 
 Fitness: 0.9663473429977085
-singleMoleculeCollision fitness: 0.9155297747424243
-singleMoleculeDecomposition fitness: 0.8559918487587259
-intermolecularCollision fitness: 0.9192019089453721
-intermolecularSynthesis fitness: 0.7310046408526799
+singleMoleculeCollision fitness: 0.9104675709070225
+singleMoleculeDecomposition fitness: 0.8772345812115586
+intermolecularCollision fitness: 0.9041433275126773
+intermolecularSynthesis fitness: 0.7814686494305275
 
 EuclidDist
 Итоговые центроиды
-C1	1.25	3.0	
-C2	4.0	1.6666666666666667	
+C1	0	0	
+C2	2.9	2.2	
 
-SSE: 22.083333333333332
+Полученные кластера
+2	2	2	2	2	2	2	2	2	2	
 
-Fitness: 2.0381944444444446
-singleMoleculeCollision fitness: 6.670138888888889
-singleMoleculeDecomposition fitness: 5.149305555555555
-intermolecularCollision fitness: 10.436805555555555
-intermolecularSynthesis fitness: 11.493055555555555
+SSE: 44.5
+
+Fitness: 2.225
+singleMoleculeCollision fitness: 10.975
+singleMoleculeDecomposition fitness: 13.841666666666667
+intermolecularCollision fitness: 13.875
+intermolecularSynthesis fitness: 12.133333333333333
 
 Cos+Dist
 Итоговые центроиды
-C1	1.4	2.6	
-C2	4.4	1.8	
+C1	0	0	
+C2	2.9	2.2	
 
-SSE: 6.995412587975338
+Полученные кластера
+2	2	2	2	2	2	2	2	2	2	
 
-Fitness: 0.6995412587975339
-singleMoleculeCollision fitness: 0.04751716338862015
-singleMoleculeDecomposition fitness: 0.26440958937035997
-intermolecularCollision fitness: 0.22453732877805974
-intermolecularSynthesis fitness: 0.3991007258708724
+SSE: 3.5801037397652395
 
-Итерация №10
+Fitness: 0.17900518698826198
+singleMoleculeCollision fitness: -0.5354389695035802
+singleMoleculeDecomposition fitness: -0.3014835458912441
+intermolecularCollision fitness: -0.3531643589623474
+intermolecularSynthesis fitness: -0.5898287050187145
+
+Итерация №16
 Начальные центроиды
-C1	-5	7	
-C2	-2	-9	
+C1	10	6	
+C2	1	0	
 
 CosineSimilarity
 Итоговые центроиды
 C1	2.0	3.2	
 C2	3.8	1.2	
 
+Полученные кластера
+2	2	2	1	2	2	1	1	1	1	
+
 SSE: 9.663473429977087
 
 Fitness: 0.9663473429977085
-singleMoleculeCollision fitness: 0.8720470243410405
-singleMoleculeDecomposition fitness: 0.8687609219308945
-intermolecularCollision fitness: 0.8612084195872621
-intermolecularSynthesis fitness: 0.849545401819777
+singleMoleculeCollision fitness: 0.7674128437894929
+singleMoleculeDecomposition fitness: 0.9268442634245735
+intermolecularCollision fitness: 0.9441501549872582
+intermolecularSynthesis fitness: 0.9298604974661655
 
 EuclidDist
 Итоговые центроиды
-C1	1.6666666666666667	2.3333333333333335	
-C2	4.75	2.0	
+C1	4.75	2.0	
+C2	1.6666666666666667	2.3333333333333335	
+
+Полученные кластера
+1	1	2	2	2	1	2	2	2	1	
 
 SSE: 21.416666666666668
 
 Fitness: 2.1493055555555554
-singleMoleculeCollision fitness: 5.163194444444444
-singleMoleculeDecomposition fitness: 6.509027777777778
-intermolecularCollision fitness: 9.149305555555555
-intermolecularSynthesis fitness: 9.92013888888889
+singleMoleculeCollision fitness: 4.864583333333334
+singleMoleculeDecomposition fitness: 7.192361111111111
+intermolecularCollision fitness: 7.875694444444443
+intermolecularSynthesis fitness: 8.100694444444445
 
 Cos+Dist
 Итоговые центроиды
-C1	1.4	2.6	
-C2	4.4	1.8	
+C1	4.4	1.8	
+C2	1.4	2.6	
+
+Полученные кластера
+1	1	1	2	2	1	2	2	2	1	
 
 SSE: 6.995412587975338
 
 Fitness: 0.6995412587975339
-singleMoleculeCollision fitness: 0.6995412587975339
-singleMoleculeDecomposition fitness: 0.3312184199778927
-intermolecularCollision fitness: 0.03869592959406909
-intermolecularSynthesis fitness: 0.44424155264762216
+singleMoleculeCollision fitness: 0.4964953436510916
+singleMoleculeDecomposition fitness: 0.22453732877805974
+intermolecularCollision fitness: 0.01235356492757812
+intermolecularSynthesis fitness: 0.18191190222854808
 
-Итерация №11
+Итерация №17
 Начальные центроиды
-C1	-4	1	
-C2	5	1	
+C1	6	1	
+C2	3	-7	
 
 CosineSimilarity
 Итоговые центроиды
-C1	1.0	3.3333333333333335	
-C2	3.7142857142857144	1.7142857142857142	
+C1	2.9	2.2	
+C2	0	0	
 
-SSE: 9.722363580016674
+Полученные кластера
+1	1	1	1	1	1	1	1	1	1	
 
-Fitness: 0.9719515924219407
-singleMoleculeCollision fitness: 0.9043880064187633
-singleMoleculeDecomposition fitness: 0.8611185439847657
-intermolecularCollision fitness: 0.8625703844702872
-intermolecularSynthesis fitness: 0.8542739259951813
+SSE: 9.03841859513275
+
+Fitness: 0.4519209297566375
+singleMoleculeCollision fitness: 0.4621063266969308
+singleMoleculeDecomposition fitness: 0.4600887759650689
+intermolecularCollision fitness: 0.46797467568511486
+intermolecularSynthesis fitness: 0.4116017494402311
+
+EuclidDist
+Итоговые центроиды
+C1	2.9	2.2	
+C2	0	0	
+
+Полученные кластера
+1	1	1	1	1	1	1	1	1	1	
+
+SSE: 44.5
+
+Fitness: 2.225
+singleMoleculeCollision fitness: 10.082142857142857
+singleMoleculeDecomposition fitness: 13.016666666666666
+intermolecularCollision fitness: 13.508333333333333
+intermolecularSynthesis fitness: 13.275
+
+Cos+Dist
+Итоговые центроиды
+C1	2.9	2.2	
+C2	0	0	
+
+Полученные кластера
+1	1	1	1	1	1	1	1	1	1	
+
+SSE: 3.5801037397652395
+
+Fitness: 0.17900518698826198
+singleMoleculeCollision fitness: -0.3782210913277281
+singleMoleculeDecomposition fitness: -0.4866662791915589
+intermolecularCollision fitness: -0.53556381234131
+intermolecularSynthesis fitness: -0.4711582990881983
+
+Итерация №18
+Начальные центроиды
+C1	-4	0	
+C2	3	5	
+
+CosineSimilarity
+Итоговые центроиды
+C1	0	0	
+C2	2.9	2.2	
+
+Полученные кластера
+2	2	2	2	2	2	2	2	2	2	
+
+SSE: 9.03841859513275
+
+Fitness: 0.4519209297566375
+singleMoleculeCollision fitness: 0.43215930080388504
+singleMoleculeDecomposition fitness: 0.47984765114262806
+intermolecularCollision fitness: 0.4442648496949985
+intermolecularSynthesis fitness: 0.4620587045242725
+
+EuclidDist
+Итоговые центроиды
+C1	0	0	
+C2	2.9	2.2	
+
+Полученные кластера
+2	2	2	2	2	2	2	2	2	2	
+
+SSE: 44.5
+
+Fitness: 2.225
+singleMoleculeCollision fitness: 9.433333333333334
+singleMoleculeDecomposition fitness: 13.225
+intermolecularCollision fitness: 12.405000000000001
+intermolecularSynthesis fitness: 12.665
+
+Cos+Dist
+Итоговые центроиды
+C1	0	0	
+C2	2.9	2.2	
+
+Полученные кластера
+2	2	2	2	2	2	2	2	2	2	
+
+SSE: 3.5801037397652395
+
+Fitness: 0.17900518698826198
+singleMoleculeCollision fitness: -0.5321075896224456
+singleMoleculeDecomposition fitness: -0.2697963557078396
+intermolecularCollision fitness: -0.3149317479098338
+intermolecularSynthesis fitness: -0.30871402663983016
+
+Итерация №19
+Начальные центроиды
+C1	-4	3	
+C2	0	-4	
+
+CosineSimilarity
+Итоговые центроиды
+C1	2.0	3.2	
+C2	3.8	1.2	
+
+Полученные кластера
+2	2	2	1	2	2	1	1	1	1	
+
+SSE: 9.663473429977087
+
+Fitness: 0.9663473429977085
+singleMoleculeCollision fitness: 0.8406371506923065
+singleMoleculeDecomposition fitness: 0.9322277113993414
+intermolecularCollision fitness: 0.8301407819775525
+intermolecularSynthesis fitness: 0.7934095659363485
 
 EuclidDist
 Итоговые центроиды
 C1	1.25	3.0	
 C2	4.0	1.6666666666666667	
 
+Полученные кластера
+2	2	2	1	2	2	1	1	1	2	
+
 SSE: 22.083333333333332
 
 Fitness: 2.0381944444444446
-singleMoleculeCollision fitness: 9.886805555555556
-singleMoleculeDecomposition fitness: 9.745535714285715
-intermolecularCollision fitness: 8.062996031746032
-intermolecularSynthesis fitness: 8.503472222222221
+singleMoleculeCollision fitness: 5.795138888888888
+singleMoleculeDecomposition fitness: 9.320138888888888
+intermolecularCollision fitness: 7.114583333333332
+intermolecularSynthesis fitness: 3.2118055555555554
+
+Cos+Dist
+Итоговые центроиды
+C1	2.0	3.2	
+C2	3.8	1.2	
+
+Полученные кластера
+2	2	2	1	2	2	1	1	1	1	
+
+SSE: 7.025070219197362
+
+Fitness: 0.7025070219197362
+singleMoleculeCollision fitness: 0.12801439926370353
+singleMoleculeDecomposition fitness: 0.4414305496988016
+intermolecularCollision fitness: 0.4308305517756247
+intermolecularSynthesis fitness: -0.16347008127581805
+
+Итерация №20
+Начальные центроиды
+C1	1	10	
+C2	-7	-10	
+
+CosineSimilarity
+Итоговые центроиды
+C1	2.9	2.2	
+C2	0	0	
+
+Полученные кластера
+1	1	1	1	1	1	1	1	1	1	
+
+SSE: 9.03841859513275
+
+Fitness: 0.4519209297566375
+singleMoleculeCollision fitness: 0.4482299896300307
+singleMoleculeDecomposition fitness: 0.4461867098488096
+intermolecularCollision fitness: 0.4832815187646034
+intermolecularSynthesis fitness: 0.4589791773840082
+
+EuclidDist
+Итоговые центроиды
+C1	2.9	2.2	
+C2	0	0	
+
+Полученные кластера
+1	1	1	1	1	1	1	1	1	1	
+
+SSE: 44.5
+
+Fitness: 2.225
+singleMoleculeCollision fitness: 11.504999999999999
+singleMoleculeDecomposition fitness: 12.55
+intermolecularCollision fitness: 13.382142857142856
+intermolecularSynthesis fitness: 12.825
+
+Cos+Dist
+Итоговые центроиды
+C1	2.9	2.2	
+C2	0	0	
+
+Полученные кластера
+1	1	1	1	1	1	1	1	1	1	
+
+SSE: 3.5801037397652395
+
+Fitness: 0.17900518698826198
+singleMoleculeCollision fitness: -0.4635010098733976
+singleMoleculeDecomposition fitness: -0.34426438001988646
+intermolecularCollision fitness: -0.1694712562847051
+intermolecularSynthesis fitness: -0.3718080192222308
+
+Итерация №21
+Начальные центроиды
+C1	-4	-5	
+C2	3	-6	
+
+CosineSimilarity
+Итоговые центроиды
+C1	1.0	3.3333333333333335	
+C2	3.7142857142857144	1.7142857142857142	
+
+Полученные кластера
+2	2	2	1	2	2	2	1	1	2	
+
+SSE: 9.722363580016674
+
+Fitness: 0.9719515924219407
+singleMoleculeCollision fitness: 0.7441390655524442
+singleMoleculeDecomposition fitness: 0.8090673735143633
+intermolecularCollision fitness: 0.7247889766943478
+intermolecularSynthesis fitness: 0.835201842342977
+
+EuclidDist
+Итоговые центроиды
+C1	1.25	3.0	
+C2	4.0	1.6666666666666667	
+
+Полученные кластера
+2	2	2	1	2	2	1	1	1	2	
+
+SSE: 22.083333333333332
+
+Fitness: 2.0381944444444446
+singleMoleculeCollision fitness: 8.503472222222221
+singleMoleculeDecomposition fitness: 8.765376984126984
+intermolecularCollision fitness: 12.774305555555555
+intermolecularSynthesis fitness: 4.970138888888888
 
 Cos+Dist
 Итоговые центроиды
 C1	1.0	3.3333333333333335	
 C2	3.7142857142857144	1.7142857142857142	
 
+Полученные кластера
+2	2	2	1	2	2	2	1	1	2	
+
 SSE: 6.900120247367058
 
 Fitness: 0.7681679966322363
-singleMoleculeCollision fitness: -0.36077628790390776
-singleMoleculeDecomposition fitness: 0.17199619718393452
-intermolecularCollision fitness: 0.15525649210607384
-intermolecularSynthesis fitness: 0.009996731470602795
+singleMoleculeCollision fitness: 0.16722808459012917
+singleMoleculeDecomposition fitness: -0.02597350665400554
+intermolecularCollision fitness: 0.1903810058004704
+intermolecularSynthesis fitness: -0.1840387836006869
 
-Итерация №12
+Итерация №22
 Начальные центроиды
-C1	-2	-2	
-C2	-10	-7	
+C1	4	-5	
+C2	-7	0	
 
 CosineSimilarity
 Итоговые центроиды
 C1	3.7142857142857144	1.7142857142857142	
 C2	1.0	3.3333333333333335	
 
+Полученные кластера
+1	1	1	2	1	1	1	2	2	1	
+
 SSE: 9.722363580016674
 
 Fitness: 0.9719515924219407
-singleMoleculeCollision fitness: 0.9060680310296354
-singleMoleculeDecomposition fitness: 0.7930269638698146
-intermolecularCollision fitness: 0.8970007901587795
-intermolecularSynthesis fitness: 0.9058613989724668
-
-EuclidDist
-Итоговые центроиды
-C1	2.9	2.2	
-C2	0	0	
-
-SSE: 44.5
-
-Fitness: 2.225
-singleMoleculeCollision fitness: 11.641666666666666
-singleMoleculeDecomposition fitness: 12.501190476190477
-intermolecularCollision fitness: 12.0625
-intermolecularSynthesis fitness: 10.316666666666666
-
-Cos+Dist
-Итоговые центроиды
-C1	2.9	2.2	
-C2	0	0	
-
-SSE: 3.5801037397652395
-
-Fitness: 0.17900518698826198
-singleMoleculeCollision fitness: -0.54815875423938
-singleMoleculeDecomposition fitness: -0.37341727117863677
-intermolecularCollision fitness: -0.4025983659390787
-intermolecularSynthesis fitness: -0.7176521086024572
-
-Итерация №13
-Начальные центроиды
-C1	7	1	
-C2	1	-8	
-
-CosineSimilarity
-Итоговые центроиды
-C1	2.9	2.2	
-C2	0	0	
-
-SSE: 9.03841859513275
-
-Fitness: 0.4519209297566375
-singleMoleculeCollision fitness: 0.45037441998883876
-singleMoleculeDecomposition fitness: 0.470263031337197
-intermolecularCollision fitness: 0.45686077180844364
-intermolecularSynthesis fitness: 0.4896260909167021
-
-EuclidDist
-Итоговые центроиды
-C1	2.9	2.2	
-C2	0	0	
-
-SSE: 44.5
-
-Fitness: 2.225
-singleMoleculeCollision fitness: 9.458333333333334
-singleMoleculeDecomposition fitness: 11.867857142857144
-intermolecularCollision fitness: 7.885
-intermolecularSynthesis fitness: 13.105
-
-Cos+Dist
-Итоговые центроиды
-C1	2.9	2.2	
-C2	0	0	
-
-SSE: 3.5801037397652395
-
-Fitness: 0.17900518698826198
-singleMoleculeCollision fitness: -0.36393140621545333
-singleMoleculeDecomposition fitness: -0.3047964407242425
-intermolecularCollision fitness: -0.19678266892611299
-intermolecularSynthesis fitness: -0.29414896567142435
-
-Итерация №14
-Начальные центроиды
-C1	-4	-3	
-C2	-5	6	
-
-CosineSimilarity
-Итоговые центроиды
-C1	0	0	
-C2	2.9	2.2	
-
-SSE: 9.03841859513275
-
-Fitness: 0.4519209297566375
-singleMoleculeCollision fitness: 0.4323670197743358
-singleMoleculeDecomposition fitness: 0.4446893582222959
-intermolecularCollision fitness: 0.44252800381789037
-intermolecularSynthesis fitness: 0.44725990783756764
+singleMoleculeCollision fitness: 0.7649940676086826
+singleMoleculeDecomposition fitness: 0.8699309122330628
+intermolecularCollision fitness: 0.7716254748093104
+intermolecularSynthesis fitness: 0.7024710283807107
 
 EuclidDist
 Итоговые центроиды
 C1	4.0	1.6666666666666667	
 C2	1.25	3.0	
 
+Полученные кластера
+1	1	1	2	1	1	2	2	2	1	
+
 SSE: 22.083333333333332
 
 Fitness: 2.0381944444444446
-singleMoleculeCollision fitness: 9.620138888888889
-singleMoleculeDecomposition fitness: 5.586805555555555
-intermolecularCollision fitness: 9.110615079365079
-intermolecularSynthesis fitness: 6.961805555555555
+singleMoleculeCollision fitness: 10.217757936507935
+singleMoleculeDecomposition fitness: 9.336805555555555
+intermolecularCollision fitness: 8.253472222222221
+intermolecularSynthesis fitness: 8.621527777777777
 
 Cos+Dist
 Итоговые центроиды
-C1	4.4	1.8	
-C2	1.4	2.6	
+C1	3.7142857142857144	1.7142857142857142	
+C2	1.0	3.3333333333333335	
 
-SSE: 6.995412587975338
-
-Fitness: 0.6995412587975339
-singleMoleculeCollision fitness: 0.34780429503181876
-singleMoleculeDecomposition fitness: 0.31141855998897605
-intermolecularCollision fitness: 0.4256937064155488
-intermolecularSynthesis fitness: 0.13776813290094342
-
-Итерация №15
-Начальные центроиды
-C1	-3	7	
-C2	-7	9	
-
-CosineSimilarity
-Итоговые центроиды
-C1	2.9	2.2	
-C2	0	0	
-
-SSE: 9.03841859513275
-
-Fitness: 0.4519209297566375
-singleMoleculeCollision fitness: 0.4572893727997
-singleMoleculeDecomposition fitness: 0.46328530696491477
-intermolecularCollision fitness: 0.4451698509702278
-intermolecularSynthesis fitness: 0.44495520012251605
-
-EuclidDist
-Итоговые центроиды
-C1	2.9	2.2	
-C2	0	0	
-
-SSE: 44.5
-
-Fitness: 2.225
-singleMoleculeCollision fitness: 10.85
-singleMoleculeDecomposition fitness: 17.486904761904764
-intermolecularCollision fitness: 13.383333333333333
-intermolecularSynthesis fitness: 10.341666666666667
-
-Cos+Dist
-Итоговые центроиды
-C1	2.9	2.2	
-C2	0	0	
-
-SSE: 3.5801037397652395
-
-Fitness: 0.17900518698826198
-singleMoleculeCollision fitness: -0.23044919588089718
-singleMoleculeDecomposition fitness: -0.4232519586688184
-intermolecularCollision fitness: -0.3188866000620848
-intermolecularSynthesis fitness: -0.3524064670529255
-
-Итерация №16
-Начальные центроиды
-C1	9	-6	
-C2	3	6	
-
-CosineSimilarity
-Итоговые центроиды
-C1	3.8	1.2	
-C2	2.0	3.2	
-
-SSE: 9.663473429977087
-
-Fitness: 0.9663473429977085
-singleMoleculeCollision fitness: 0.8689389653970601
-singleMoleculeDecomposition fitness: 0.8558583974684909
-intermolecularCollision fitness: 0.8331386182230078
-intermolecularSynthesis fitness: 0.833866547642393
-
-EuclidDist
-Итоговые центроиды
-C1	0	0	
-C2	2.9	2.2	
-
-SSE: 44.5
-
-Fitness: 2.225
-singleMoleculeCollision fitness: 11.091666666666667
-singleMoleculeDecomposition fitness: 10.725
-intermolecularCollision fitness: 13.029761904761905
-intermolecularSynthesis fitness: 8.966666666666667
-
-Cos+Dist
-Итоговые центроиды
-C1	4.4	1.8	
-C2	1.4	2.6	
-
-SSE: 6.995412587975338
-
-Fitness: 0.6995412587975339
-singleMoleculeCollision fitness: 0.2169133860488061
-singleMoleculeDecomposition fitness: 0.28372156639608537
-intermolecularCollision fitness: 0.08241477656540452
-intermolecularSynthesis fitness: 0.1878629682000582
-
-Итерация №17
-Начальные центроиды
-C1	-8	6	
-C2	2	-1	
-
-CosineSimilarity
-Итоговые центроиды
-C1	1.0	3.3333333333333335	
-C2	3.7142857142857144	1.7142857142857142	
-
-SSE: 9.722363580016674
-
-Fitness: 0.9719515924219407
-singleMoleculeCollision fitness: 0.9350344186039651
-singleMoleculeDecomposition fitness: 0.8094282719687587
-intermolecularCollision fitness: 0.9054531885512951
-intermolecularSynthesis fitness: 0.6922736383646036
-
-EuclidDist
-Итоговые центроиды
-C1	0	0	
-C2	2.9	2.2	
-
-SSE: 44.5
-
-Fitness: 2.225
-singleMoleculeCollision fitness: 9.825
-singleMoleculeDecomposition fitness: 10.620238095238095
-intermolecularCollision fitness: 11.665
-intermolecularSynthesis fitness: 9.829761904761904
-
-Cos+Dist
-Итоговые центроиды
-C1	1.0	3.3333333333333335	
-C2	3.7142857142857144	1.7142857142857142	
+Полученные кластера
+1	1	1	2	1	1	1	2	2	1	
 
 SSE: 6.900120247367058
 
 Fitness: 0.7681679966322363
-singleMoleculeCollision fitness: 0.16681143348698768
-singleMoleculeDecomposition fitness: 0.15503186177150624
-intermolecularCollision fitness: 0.16363908594301563
-intermolecularSynthesis fitness: 0.20416315422480502
+singleMoleculeCollision fitness: 0.15871208929523506
+singleMoleculeDecomposition fitness: 0.5089052130663504
+intermolecularCollision fitness: 0.3251968198216258
+intermolecularSynthesis fitness: 0.45254222301635827
 
-Итерация №18
+Итерация №23
 Начальные центроиды
-C1	-1	9	
+C1	-5	8	
+C2	7	-7	
+
+CosineSimilarity
+Итоговые центроиды
+C1	2.0	3.2	
+C2	3.8	1.2	
+
+Полученные кластера
+2	2	2	1	2	2	1	1	1	1	
+
+SSE: 9.663473429977087
+
+Fitness: 0.9663473429977085
+singleMoleculeCollision fitness: 0.8550541038165551
+singleMoleculeDecomposition fitness: 0.938647635225835
+intermolecularCollision fitness: 0.876899117286448
+intermolecularSynthesis fitness: 0.7929970274371109
+
+EuclidDist
+Итоговые центроиды
+C1	1.25	3.0	
+C2	4.0	1.6666666666666667	
+
+Полученные кластера
+2	2	2	1	2	2	1	1	1	2	
+
+SSE: 22.083333333333332
+
+Fitness: 2.0381944444444446
+singleMoleculeCollision fitness: 5.961805555555555
+singleMoleculeDecomposition fitness: 9.378472222222221
+intermolecularCollision fitness: 8.253472222222221
+intermolecularSynthesis fitness: 7.545138888888888
+
+Cos+Dist
+Итоговые центроиды
+C1	1.25	3.0	
+C2	4.0	1.6666666666666667	
+
+Полученные кластера
+2	2	2	1	2	2	1	1	1	2	
+
+SSE: 7.3994454845642
+
+Fitness: 0.7681863045756204
+singleMoleculeCollision fitness: 0.364532240497937
+singleMoleculeDecomposition fitness: 0.2891153185059574
+intermolecularCollision fitness: 0.09024408670107802
+intermolecularSynthesis fitness: 0.08245963990366746
+
+Итерация №24
+Начальные центроиды
+C1	8	5	
+C2	2	5	
+
+CosineSimilarity
+Итоговые центроиды
+C1	3.7142857142857144	1.7142857142857142	
+C2	1.0	3.3333333333333335	
+
+Полученные кластера
+1	1	1	2	1	1	1	2	2	1	
+
+SSE: 9.722363580016674
+
+Fitness: 0.9719515924219407
+singleMoleculeCollision fitness: 0.8652829740909338
+singleMoleculeDecomposition fitness: 0.8901735206443012
+intermolecularCollision fitness: 0.77537911346581
+intermolecularSynthesis fitness: 0.8420982437170033
+
+EuclidDist
+Итоговые центроиды
+C1	4.75	2.0	
+C2	1.6666666666666667	2.3333333333333335	
+
+Полученные кластера
+1	1	2	2	2	1	2	2	2	1	
+
+SSE: 21.416666666666668
+
+Fitness: 2.1493055555555554
+singleMoleculeCollision fitness: 5.759027777777777
+singleMoleculeDecomposition fitness: 9.559027777777777
+intermolecularCollision fitness: 11.76736111111111
+intermolecularSynthesis fitness: 7.392361111111111
+
+Cos+Dist
+Итоговые центроиды
+C1	4.4	1.8	
+C2	1.4	2.6	
+
+Полученные кластера
+1	1	1	2	2	1	2	2	2	1	
+
+SSE: 6.995412587975338
+
+Fitness: 0.6995412587975339
+singleMoleculeCollision fitness: 0.0839243029167563
+singleMoleculeDecomposition fitness: 0.08985537367594812
+intermolecularCollision fitness: 0.24133135991245075
+intermolecularSynthesis fitness: 0.49553988651509595
+
+Итерация №25
+Начальные центроиды
+C1	-2	9	
 C2	4	-9	
 
 CosineSimilarity
@@ -771,565 +1295,311 @@ CosineSimilarity
 C1	2.0	3.2	
 C2	3.8	1.2	
 
+Полученные кластера
+2	2	2	1	2	2	1	1	1	1	
+
 SSE: 9.663473429977087
 
 Fitness: 0.9663473429977085
-singleMoleculeCollision fitness: 0.9211195090677078
-singleMoleculeDecomposition fitness: 0.8857552320905229
-intermolecularCollision fitness: 0.8445225533125515
-intermolecularSynthesis fitness: 0.8559918487587259
+singleMoleculeCollision fitness: 0.8791981365655412
+singleMoleculeDecomposition fitness: 0.8515136036699283
+intermolecularCollision fitness: 0.904466670949287
+intermolecularSynthesis fitness: 0.8687609219308945
 
 EuclidDist
 Итоговые центроиды
 C1	1.6666666666666667	2.3333333333333335	
 C2	4.75	2.0	
 
+Полученные кластера
+2	2	1	1	1	2	1	1	1	2	
+
 SSE: 21.416666666666668
 
 Fitness: 2.1493055555555554
-singleMoleculeCollision fitness: 10.003472222222221
-singleMoleculeDecomposition fitness: 7.350694444444444
-intermolecularCollision fitness: 8.51736111111111
-intermolecularSynthesis fitness: 5.913194444444445
+singleMoleculeCollision fitness: 5.899305555555555
+singleMoleculeDecomposition fitness: 9.465277777777779
+intermolecularCollision fitness: 7.809027777777778
+intermolecularSynthesis fitness: 6.267361111111111
 
 Cos+Dist
 Итоговые центроиды
 C1	1.4	2.6	
 C2	4.4	1.8	
 
+Полученные кластера
+2	2	2	1	1	2	1	1	1	2	
+
 SSE: 6.995412587975338
 
 Fitness: 0.6995412587975339
-singleMoleculeCollision fitness: 0.33563715337359135
-singleMoleculeDecomposition fitness: 0.18887727159150292
-intermolecularCollision fitness: 0.3008711265571554
-intermolecularSynthesis fitness: 0.4308659851753673
+singleMoleculeCollision fitness: 0.09224237591888243
+singleMoleculeDecomposition fitness: 0.38682366455583517
+intermolecularCollision fitness: 0.34157667763656085
+intermolecularSynthesis fitness: 0.3703143536288855
 
-Итерация №19
+Итерация №26
 Начальные центроиды
-C1	1	-5	
-C2	9	4	
+C1	0	4	
+C2	10	0	
 
 CosineSimilarity
 Итоговые центроиды
-C1	0	0	
-C2	2.9	2.2	
+C1	1.0	3.3333333333333335	
+C2	3.7142857142857144	1.7142857142857142	
 
-SSE: 9.03841859513275
+Полученные кластера
+2	2	2	1	2	2	2	1	1	2	
 
-Fitness: 0.4519209297566375
-singleMoleculeCollision fitness: 0.4560576606380391
-singleMoleculeDecomposition fitness: 0.4289083557740569
-intermolecularCollision fitness: 0.4434384678304489
-intermolecularSynthesis fitness: 0.46822781462650676
+SSE: 9.722363580016674
+
+Fitness: 0.9719515924219407
+singleMoleculeCollision fitness: 0.7092889200163361
+singleMoleculeDecomposition fitness: 0.802480189612036
+intermolecularCollision fitness: 0.8932167966554889
+intermolecularSynthesis fitness: 0.8846922248605034
 
 EuclidDist
 Итоговые центроиды
 C1	1.6666666666666667	2.3333333333333335	
 C2	4.75	2.0	
 
+Полученные кластера
+2	2	1	1	1	2	1	1	1	2	
+
 SSE: 21.416666666666668
 
 Fitness: 2.1493055555555554
-singleMoleculeCollision fitness: 6.975694444444444
-singleMoleculeDecomposition fitness: 11.709027777777777
-intermolecularCollision fitness: 9.89236111111111
-intermolecularSynthesis fitness: 6.674107142857142
+singleMoleculeCollision fitness: 4.0828373015873005
+singleMoleculeDecomposition fitness: 9.844742063492063
+intermolecularCollision fitness: 10.03125
+intermolecularSynthesis fitness: 9.24236111111111
 
 Cos+Dist
 Итоговые центроиды
-C1	0	0	
-C2	2.9	2.2	
+C1	1.4	2.6	
+C2	4.4	1.8	
 
-SSE: 3.5801037397652395
+Полученные кластера
+2	2	2	1	1	2	1	1	1	2	
 
-Fitness: 0.17900518698826198
-singleMoleculeCollision fitness: -0.4381035798791374
-singleMoleculeDecomposition fitness: -0.3180177404437496
-intermolecularCollision fitness: -0.40621125011848874
-intermolecularSynthesis fitness: -0.5100495716598736
+SSE: 6.995412587975338
 
-Итерация №20
+Fitness: 0.6995412587975339
+singleMoleculeCollision fitness: 0.36797398961014505
+singleMoleculeDecomposition fitness: 0.348100198262329
+intermolecularCollision fitness: 0.5401376377720312
+intermolecularSynthesis fitness: 0.20716394867575724
+
+Итерация №27
 Начальные центроиды
-C1	1	-4	
-C2	-2	-7	
-
-CosineSimilarity
-Итоговые центроиды
-C1	3.7142857142857144	1.7142857142857142	
-C2	1.0	3.3333333333333335	
-
-SSE: 9.722363580016674
-
-Fitness: 0.9719515924219407
-singleMoleculeCollision fitness: 0.8789884441521159
-singleMoleculeDecomposition fitness: 0.8998956742480491
-intermolecularCollision fitness: 0.8827925015137972
-intermolecularSynthesis fitness: 0.8241024891239608
-
-EuclidDist
-Итоговые центроиды
-C1	2.9	2.2	
-C2	0	0	
-
-SSE: 44.5
-
-Fitness: 2.225
-singleMoleculeCollision fitness: 11.402777777777779
-singleMoleculeDecomposition fitness: 12.55
-intermolecularCollision fitness: 10.925
-intermolecularSynthesis fitness: 10.196428571428571
-
-Cos+Dist
-Итоговые центроиды
-C1	2.9	2.2	
-C2	0	0	
-
-SSE: 3.5801037397652395
-
-Fitness: 0.17900518698826198
-singleMoleculeCollision fitness: -0.20325792311218127
-singleMoleculeDecomposition fitness: -0.24911233421358653
-intermolecularCollision fitness: -0.48335372046715475
-intermolecularSynthesis fitness: -0.5851467331018255
-
-Итерация №21
-Начальные центроиды
-C1	-2	1	
-C2	-7	-2	
-
-CosineSimilarity
-Итоговые центроиды
-C1	2.9	2.2	
-C2	0	0	
-
-SSE: 9.03841859513275
-
-Fitness: 0.4519209297566375
-singleMoleculeCollision fitness: 0.44422195925277413
-singleMoleculeDecomposition fitness: 0.465417188801626
-intermolecularCollision fitness: 0.48676124147395083
-intermolecularSynthesis fitness: 0.43330311549931055
-
-EuclidDist
-Итоговые центроиды
-C1	2.9	2.2	
-C2	0	0	
-
-SSE: 44.5
-
-Fitness: 2.225
-singleMoleculeCollision fitness: 10.504999999999999
-singleMoleculeDecomposition fitness: 11.1
-intermolecularCollision fitness: 13.375
-intermolecularSynthesis fitness: 9.339285714285715
-
-Cos+Dist
-Итоговые центроиды
-C1	2.9	2.2	
-C2	0	0	
-
-SSE: 3.5801037397652395
-
-Fitness: 0.17900518698826198
-singleMoleculeCollision fitness: -0.5046613496370156
-singleMoleculeDecomposition fitness: -0.4268270478591395
-intermolecularCollision fitness: -0.3531643589623474
-intermolecularSynthesis fitness: -0.5673882151247532
-
-Итерация №22
-Начальные центроиды
-C1	-3	-6	
-C2	-6	3	
+C1	-2	-3	
+C2	-3	3	
 
 CosineSimilarity
 Итоговые центроиды
 C1	3.8	1.2	
 C2	2.0	3.2	
+
+Полученные кластера
+1	1	1	2	1	1	2	2	2	2	
 
 SSE: 9.663473429977087
 
 Fitness: 0.9663473429977085
-singleMoleculeCollision fitness: 0.8108640128212014
-singleMoleculeDecomposition fitness: 0.9146338658009614
-intermolecularCollision fitness: 0.9187722354198389
-intermolecularSynthesis fitness: 0.907179173033136
+singleMoleculeCollision fitness: 0.8778612577056828
+singleMoleculeDecomposition fitness: 0.8512602342934739
+intermolecularCollision fitness: 0.882589004197538
+intermolecularSynthesis fitness: 0.8211710173864794
 
 EuclidDist
 Итоговые центроиды
-C1	4.4	1.8	
-C2	1.4	2.6	
+C1	4.75	2.0	
+C2	1.6666666666666667	2.3333333333333335	
 
-SSE: 20.400000000000002
+Полученные кластера
+1	1	2	2	2	1	2	2	2	1	
 
-Fitness: 2.04
-singleMoleculeCollision fitness: 7.000000000000001
-singleMoleculeDecomposition fitness: 6.045714285714286
-intermolecularCollision fitness: 7.160000000000002
-intermolecularSynthesis fitness: 5.4766666666666675
+SSE: 21.416666666666668
+
+Fitness: 2.1493055555555554
+singleMoleculeCollision fitness: 6.461805555555555
+singleMoleculeDecomposition fitness: 10.89236111111111
+intermolecularCollision fitness: 6.517361111111111
+intermolecularSynthesis fitness: 7.010416666666666
 
 Cos+Dist
 Итоговые центроиды
 C1	4.4	1.8	
 C2	1.4	2.6	
+
+Полученные кластера
+1	1	1	2	2	1	2	2	2	1	
 
 SSE: 6.995412587975338
 
 Fitness: 0.6995412587975339
-singleMoleculeCollision fitness: 0.2227106729625767
-singleMoleculeDecomposition fitness: 0.37954399561202773
-intermolecularCollision fitness: 0.34983043854174095
-intermolecularSynthesis fitness: 0.14728271739927384
+singleMoleculeCollision fitness: 0.3609455536380205
+singleMoleculeDecomposition fitness: 0.02440416782114139
+intermolecularCollision fitness: 0.3224199913663576
+intermolecularSynthesis fitness: 0.41851971013505795
 
-Итерация №23
+Итерация №28
 Начальные центроиды
-C1	-3	10	
-C2	-6	-3	
+C1	7	0	
+C2	5	3	
 
 CosineSimilarity
-Итоговые центроиды
-C1	2.9	2.2	
-C2	0	0	
-
-SSE: 9.03841859513275
-
-Fitness: 0.4519209297566375
-singleMoleculeCollision fitness: 0.45823726451715374
-singleMoleculeDecomposition fitness: 0.47265679687446144
-intermolecularCollision fitness: 0.4518899466842874
-intermolecularSynthesis fitness: 0.46792560534059197
-
-EuclidDist
-Итоговые центроиды
-C1	1.25	3.0	
-C2	4.0	1.6666666666666667	
-
-SSE: 22.083333333333332
-
-Fitness: 2.0381944444444446
-singleMoleculeCollision fitness: 5.236805555555556
-singleMoleculeDecomposition fitness: 5.7868055555555555
-intermolecularCollision fitness: 9.17013888888889
-intermolecularSynthesis fitness: 7.703472222222222
-
-Cos+Dist
-Итоговые центроиды
-C1	2.9	2.2	
-C2	0	0	
-
-SSE: 3.5801037397652395
-
-Fitness: 0.17900518698826198
-singleMoleculeCollision fitness: -0.5386593946997564
-singleMoleculeDecomposition fitness: -0.40375306629458296
-intermolecularCollision fitness: -0.4488558515217063
-intermolecularSynthesis fitness: -0.4731914841652186
-
-Итерация №24
-Начальные центроиды
-C1	1	6	
-C2	-7	0	
-
-CosineSimilarity
-Итоговые центроиды
-C1	2.9	2.2	
-C2	0	0	
-
-SSE: 9.03841859513275
-
-Fitness: 0.4519209297566375
-singleMoleculeCollision fitness: 0.43414511984775833
-singleMoleculeDecomposition fitness: 0.47124295542095795
-intermolecularCollision fitness: 0.4384246707116491
-intermolecularSynthesis fitness: 0.4572893727997
-
-EuclidDist
-Итоговые центроиды
-C1	2.9	2.2	
-C2	0	0	
-
-SSE: 44.5
-
-Fitness: 2.225
-singleMoleculeCollision fitness: 10.95
-singleMoleculeDecomposition fitness: 11.125
-intermolecularCollision fitness: 13.545
-intermolecularSynthesis fitness: 12.841666666666667
-
-Cos+Dist
-Итоговые центроиды
-C1	2.9	2.2	
-C2	0	0	
-
-SSE: 3.5801037397652395
-
-Fitness: 0.17900518698826198
-singleMoleculeCollision fitness: -0.5100495716598736
-singleMoleculeDecomposition fitness: -0.37973175336195153
-intermolecularCollision fitness: -0.36212726560914504
-intermolecularSynthesis fitness: -0.3718080192222308
-
-Итерация №25
-Начальные центроиды
-C1	2	-4	
-C2	10	-1	
-
-CosineSimilarity
-Итоговые центроиды
-C1	0	0	
-C2	2.9	2.2	
-
-SSE: 9.03841859513275
-
-Fitness: 0.4519209297566375
-singleMoleculeCollision fitness: 0.4726791714965749
-singleMoleculeDecomposition fitness: 0.46320534396054236
-intermolecularCollision fitness: 0.43402428705144375
-intermolecularSynthesis fitness: 0.4823294091865491
-
-EuclidDist
-Итоговые центроиды
-C1	1.6666666666666667	2.3333333333333335	
-C2	4.75	2.0	
-
-SSE: 21.416666666666668
-
-Fitness: 2.1493055555555554
-singleMoleculeCollision fitness: 5.434027777777777
-singleMoleculeDecomposition fitness: 8.114583333333334
-intermolecularCollision fitness: 7.259027777777778
-intermolecularSynthesis fitness: 5.975694444444445
-
-Cos+Dist
 Итоговые центроиды
 C1	3.8	1.2	
 C2	2.0	3.2	
 
-SSE: 7.025070219197362
+Полученные кластера
+1	1	1	2	1	1	2	2	2	2	
 
-Fitness: 0.7025070219197362
-singleMoleculeCollision fitness: 0.7254062610619136
-singleMoleculeDecomposition fitness: 0.5945800662812335
-intermolecularCollision fitness: 0.3652097224828674
-intermolecularSynthesis fitness: 0.07961975049134119
+SSE: 9.663473429977087
 
-Итерация №26
-Начальные центроиды
-C1	5	1	
-C2	-1	-9	
-
-CosineSimilarity
-Итоговые центроиды
-C1	2.9	2.2	
-C2	0	0	
-
-SSE: 9.03841859513275
-
-Fitness: 0.4519209297566375
-singleMoleculeCollision fitness: 0.4900929313421319
-singleMoleculeDecomposition fitness: 0.4402661817543995
-intermolecularCollision fitness: 0.46903363319482266
-intermolecularSynthesis fitness: 0.4223650262553407
+Fitness: 0.9663473429977085
+singleMoleculeCollision fitness: 0.9107127754361259
+singleMoleculeDecomposition fitness: 0.8471549901634954
+intermolecularCollision fitness: 0.8951667228735161
+intermolecularSynthesis fitness: 0.8664577290488735
 
 EuclidDist
 Итоговые центроиды
-C1	2.9	2.2	
-C2	0	0	
+C1	4.75	2.0	
+C2	1.6666666666666667	2.3333333333333335	
 
-SSE: 44.5
-
-Fitness: 2.225
-singleMoleculeCollision fitness: 11.920238095238096
-singleMoleculeDecomposition fitness: 9.2
-intermolecularCollision fitness: 11.266666666666666
-intermolecularSynthesis fitness: 12.524999999999999
-
-Cos+Dist
-Итоговые центроиды
-C1	2.9	2.2	
-C2	0	0	
-
-SSE: 3.5801037397652395
-
-Fitness: 0.17900518698826198
-singleMoleculeCollision fitness: -0.4991590577709451
-singleMoleculeDecomposition fitness: -0.3663834483048134
-intermolecularCollision fitness: -0.2332432388284129
-intermolecularSynthesis fitness: -0.5933685342311269
-
-Итерация №27
-Начальные центроиды
-C1	-7	-5	
-C2	4	-2	
-
-CosineSimilarity
-Итоговые центроиды
-C1	0	0	
-C2	2.9	2.2	
-
-SSE: 9.03841859513275
-
-Fitness: 0.4519209297566375
-singleMoleculeCollision fitness: 0.44959048072183005
-singleMoleculeDecomposition fitness: 0.4442648496949985
-intermolecularCollision fitness: 0.46491046454614077
-intermolecularSynthesis fitness: 0.48975714081087457
-
-EuclidDist
-Итоговые центроиды
-C1	0	0	
-C2	2.9	2.2	
-
-SSE: 44.5
-
-Fitness: 2.225
-singleMoleculeCollision fitness: 10.458333333333332
-singleMoleculeDecomposition fitness: 12.282142857142858
-intermolecularCollision fitness: 13.029761904761905
-intermolecularSynthesis fitness: 9.465
-
-Cos+Dist
-Итоговые центроиды
-C1	0	0	
-C2	2.9	2.2	
-
-SSE: 3.5801037397652395
-
-Fitness: 0.17900518698826198
-singleMoleculeCollision fitness: -0.3865264418498964
-singleMoleculeDecomposition fitness: -0.45809682153030357
-intermolecularCollision fitness: -0.36592113378391594
-intermolecularSynthesis fitness: -0.1872861514136207
-
-Итерация №28
-Начальные центроиды
-C1	7	-8	
-C2	9	0	
-
-CosineSimilarity
-Итоговые центроиды
-C1	0	0	
-C2	2.9	2.2	
-
-SSE: 9.03841859513275
-
-Fitness: 0.4519209297566375
-singleMoleculeCollision fitness: 0.43768898007294593
-singleMoleculeDecomposition fitness: 0.45536793408808923
-intermolecularCollision fitness: 0.47341164223291454
-intermolecularSynthesis fitness: 0.4477245398351159
-
-EuclidDist
-Итоговые центроиды
-C1	0	0	
-C2	2.9	2.2	
-
-SSE: 44.5
-
-Fitness: 2.225
-singleMoleculeCollision fitness: 9.316666666666666
-singleMoleculeDecomposition fitness: 10.785
-intermolecularCollision fitness: 15.308333333333334
-intermolecularSynthesis fitness: 9.229761904761904
-
-Cos+Dist
-Итоговые центроиды
-C1	0	0	
-C2	2.9	2.2	
-
-SSE: 3.5801037397652395
-
-Fitness: 0.17900518698826198
-singleMoleculeCollision fitness: -0.4992282729388108
-singleMoleculeDecomposition fitness: -0.33146024492766074
-intermolecularCollision fitness: -0.43823426751092603
-intermolecularSynthesis fitness: -0.3463720187860693
-
-Итерация №29
-Начальные центроиды
-C1	-6	-1	
-C2	4	-9	
-
-CosineSimilarity
-Итоговые центроиды
-C1	1.0	3.3333333333333335	
-C2	3.7142857142857144	1.7142857142857142	
-
-SSE: 9.722363580016674
-
-Fitness: 0.9719515924219407
-singleMoleculeCollision fitness: 0.8799095547683415
-singleMoleculeDecomposition fitness: 0.8324531073528862
-intermolecularCollision fitness: 0.7773849746041008
-intermolecularSynthesis fitness: 0.7649940676086826
-
-EuclidDist
-Итоговые центроиды
-C1	1.6666666666666667	2.3333333333333335	
-C2	4.75	2.0	
+Полученные кластера
+1	1	2	2	2	1	2	2	2	1	
 
 SSE: 21.416666666666668
 
 Fitness: 2.1493055555555554
-singleMoleculeCollision fitness: 3.6840277777777772
-singleMoleculeDecomposition fitness: 6.22172619047619
-intermolecularCollision fitness: 8.009027777777778
-intermolecularSynthesis fitness: 5.420138888888888
+singleMoleculeCollision fitness: 7.989583333333334
+singleMoleculeDecomposition fitness: 8.07986111111111
+intermolecularCollision fitness: 8.075694444444444
+intermolecularSynthesis fitness: 10.14236111111111
 
 Cos+Dist
 Итоговые центроиды
-C1	1.0	3.3333333333333335	
-C2	3.7142857142857144	1.7142857142857142	
+C1	4.4	1.8	
+C2	1.4	2.6	
 
-SSE: 6.900120247367058
+Полученные кластера
+1	1	1	2	2	1	2	2	2	1	
 
-Fitness: 0.7681679966322363
-singleMoleculeCollision fitness: 0.3989198091046293
-singleMoleculeDecomposition fitness: 0.23960215650886707
-intermolecularCollision fitness: 0.45981411573014275
-intermolecularSynthesis fitness: 0.1353686671715823
+SSE: 6.995412587975338
 
-Итерация №30
+Fitness: 0.6995412587975339
+singleMoleculeCollision fitness: 0.18950293887342268
+singleMoleculeDecomposition fitness: 0.40240102144762296
+intermolecularCollision fitness: 0.222772426168883
+intermolecularSynthesis fitness: 0.3295980193317438
+
+Итерация №29
 Начальные центроиды
-C1	3	5	
-C2	-1	-7	
+C1	-5	-7	
+C2	-1	9	
 
 CosineSimilarity
 Итоговые центроиды
-C1	2.9	2.2	
-C2	0	0	
+C1	0	0	
+C2	2.9	2.2	
+
+Полученные кластера
+2	2	2	2	2	2	2	2	2	2	
 
 SSE: 9.03841859513275
 
 Fitness: 0.4519209297566375
-singleMoleculeCollision fitness: 0.4887585076985667
-singleMoleculeDecomposition fitness: 0.4896260909167021
-intermolecularCollision fitness: 0.4819192352390129
-intermolecularSynthesis fitness: 0.4048937247584332
+singleMoleculeCollision fitness: 0.4390395793137573
+singleMoleculeDecomposition fitness: 0.44499262303674775
+intermolecularCollision fitness: 0.47124295542095795
+intermolecularSynthesis fitness: 0.4718952322295662
+
+EuclidDist
+Итоговые центроиды
+C1	0	0	
+C2	2.9	2.2	
+
+Полученные кластера
+2	2	2	2	2	2	2	2	2	2	
+
+SSE: 44.5
+
+Fitness: 2.225
+singleMoleculeCollision fitness: 12.225
+singleMoleculeDecomposition fitness: 12.891666666666666
+intermolecularCollision fitness: 13.545000000000002
+intermolecularSynthesis fitness: 9.625
+
+Cos+Dist
+Итоговые центроиды
+C1	0	0	
+C2	2.9	2.2	
+
+Полученные кластера
+2	2	2	2	2	2	2	2	2	2	
+
+SSE: 3.5801037397652395
+
+Fitness: 0.17900518698826198
+singleMoleculeCollision fitness: -0.5297415821910217
+singleMoleculeDecomposition fitness: -0.3645871263838011
+intermolecularCollision fitness: -0.500023099034904
+intermolecularSynthesis fitness: -0.5673882151247532
+
+Итерация №30
+Начальные центроиды
+C1	-2	2	
+C2	-3	7	
+
+CosineSimilarity
+Итоговые центроиды
+C1	0	0	
+C2	2.9	2.2	
+
+Полученные кластера
+2	2	2	2	2	2	2	2	2	2	
+
+SSE: 9.03841859513275
+
+Fitness: 0.4519209297566375
+singleMoleculeCollision fitness: 0.4382752911454517
+singleMoleculeDecomposition fitness: 0.47265679687446144
+intermolecularCollision fitness: 0.45238143799416103
+intermolecularSynthesis fitness: 0.4580229640215256
 
 EuclidDist
 Итоговые центроиды
 C1	2.9	2.2	
 C2	0	0	
 
+Полученные кластера
+1	1	1	1	1	1	1	1	1	1	
+
 SSE: 44.5
 
 Fitness: 2.225
-singleMoleculeCollision fitness: 10.345
-singleMoleculeDecomposition fitness: 9.291666666666668
-intermolecularCollision fitness: 12.475
-intermolecularSynthesis fitness: 12.210714285714285
+singleMoleculeCollision fitness: 11.716666666666667
+singleMoleculeDecomposition fitness: 11.183333333333334
+intermolecularCollision fitness: 7.748809523809524
+intermolecularSynthesis fitness: 14.7875
 
 Cos+Dist
 Итоговые центроиды
-C1	2.9	2.2	
-C2	0	0	
+C1	1.4	2.6	
+C2	4.4	1.8	
 
-SSE: 3.5801037397652395
+Полученные кластера
+2	2	2	1	1	2	1	1	1	2	
 
-Fitness: 0.17900518698826198
-singleMoleculeCollision fitness: -0.5060112738811826
-singleMoleculeDecomposition fitness: -0.27465928968569997
-intermolecularCollision fitness: -0.29679703562416115
-intermolecularSynthesis fitness: -0.315830619147087
+SSE: 6.995412587975338
+
+Fitness: 0.6995412587975339
+singleMoleculeCollision fitness: 0.24793341268864177
+singleMoleculeDecomposition fitness: 0.4137342328793091
+intermolecularCollision fitness: 0.2927977858410554
+intermolecularSynthesis fitness: 0.34717847320030504
 

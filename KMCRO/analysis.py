@@ -74,6 +74,12 @@ while h < 30:
         f.write('\n')
     f.write('\n')
 
+    f.write('Полученные кластера\n')
+    for i in range(len(cluster)):
+        f.write(str(cluster[i]) + "\t")
+
+    f.write('\n\n')
+
     f.write('SSE: ' + str(sse) + '\n\n')
 
     fitness = kmeans.fitnessCos(dataSet, cluster, centroid, k)
@@ -152,6 +158,12 @@ while h < 30:
         f.write('\n')
     f.write('\n')
 
+    f.write('Полученные кластера\n')
+    for i in range(len(cluster)):
+        f.write(str(cluster[i]) + "\t")
+
+    f.write('\n\n')
+
     f.write('SSE: ' + str(sse) + '\n\n')
     fitness = kmeans.fitnessEuclidDist(dataSet, cluster, centroid, k)
     f.write('Fitness: ' + str(fitness) + '\n')
@@ -228,6 +240,12 @@ while h < 30:
             f.write(str(centroid[i][j]) + '\t')
         f.write('\n')
     f.write('\n')
+
+    f.write('Полученные кластера\n')
+    for i in range(len(cluster)):
+        f.write(str(cluster[i]) + "\t")
+
+    f.write('\n\n')
 
     f.write('SSE: ' + str(sse) + '\n\n')
     fitness = kmeans.fitnessCosWithDist(dataSet, cluster, centroid, k)
