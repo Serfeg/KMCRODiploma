@@ -194,9 +194,9 @@ while h < 30:
         croFitness.append(kmeans.fitnessEuclidDist(dataSet, cluster2, centroid, k))
         croList.append(cluster2)
 
-        if fitness < max(croFitness):
-            fitness = max(croFitness)
-            newCluster = croList[croFitness.index(max(croFitness))]
+        if fitness > min(croFitness):
+            fitness = min(croFitness)
+            newCluster = croList[croFitness.index(min(croFitness))]
 
         if countIterCRO == 100:
             f.write('singleMoleculeCollision fitness: ' + str(croFitness[0]) + '\n')

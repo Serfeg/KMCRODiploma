@@ -25,14 +25,14 @@ def makeDataSet(filename):
 
 if __name__ == "__main__":
     dataSet = makeDataSet("11_33_37_42.txt")
-    for i in range(len(dataSet)):
-        sum = 0
-        for j in range(len(dataSet[i])):
-            sum += dataSet[i][j] ** 2
-        sum = m.sqrt(sum)
-        for j in range(len(dataSet[i])):
-            dataSet[i][j] *= 1/sum
-    #dataSet = [[dataSet[i][j] / len(dataSet) for j in range(len(dataSet[i]))] for i in range(len(dataSet))]
+    # for i in range(len(dataSet)):
+    #     sum = 0
+    #     for j in range(len(dataSet[i])):
+    #         sum += dataSet[i][j] ** 2
+    #     sum = m.sqrt(sum)
+    #     for j in range(len(dataSet[i])):
+    #         dataSet[i][j] *= 1/sum
+    dataSet = [[dataSet[i][j] / len(dataSet) for j in range(len(dataSet[i]))] for i in range(len(dataSet))]
     df = pd.read_csv('11_33_37_42.txt', delimiter="\t")
 
     # Количество кластеров и точек
@@ -45,7 +45,7 @@ if __name__ == "__main__":
     # Рандомный кластер на длину датасета
     originalCluster = [r.randint(1, k) for i in range(len(dataSet))]
 
-    #originalCluster, centroid, sse, countIter = kmeans.kMeans(dataSet, originalCluster, k)
+    #newCluster, centroid, sse, countIterKMeans = kmeans.kMeans(dataSet, originalCluster, k)
     newCluster, centroid, sse, countIterKMeans = kmeans.kMeansWithCos(dataSet, originalCluster, k)
 
     dfCentroid = pd.DataFrame()
@@ -53,6 +53,7 @@ if __name__ == "__main__":
     for i in range(len(centroid)):
         dfCentroid['Cluster ' + str(i + 1)] = centroid[i]
 
+    #fitness = kmeans.fitnessEuclidDist(dataSet, newCluster, centroid, k)
     fitness = kmeans.fitnessCosWithDist(dataSet, newCluster, centroid, k)
     print(f"Fitness K-means: {fitness}")
 
