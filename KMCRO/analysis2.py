@@ -19,39 +19,17 @@ def makeDataSet(filename):
     return dataSet
 
 
-dataSet = [
-    [5, 0],
-    [5, 2],
-    [3, 1],
-    [0, 4],
-    [2, 1],
-    [4, 2],
-    [2, 2],
-    [2, 3],
-    [1, 3],
-    [5, 4]
-]
-originalCluster = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2]
+k = 7
 
-k = 2
+dataSet = makeDataSet("total_sample_no_empties.txt")
 
-#dataSet = makeDataSet("11_33_37_42.txt")
-
-#originalCluster = [r.randint(1, k) for i in range(len(dataSet))]
+originalCluster = [r.randint(1, k) for i in range(len(dataSet))]
 
 f = open('text.txt', 'w')
 
-f.write('Исходный датасет\n')
-for i in range(len(dataSet)):
-    for j in range(len(dataSet[i])):
-        f.write(str(dataSet[i][j]) + "\t")
-    f.write("\n")
+f.write('Исходный датасет total_sample_no_empties.txt\n')
 
-f.write('\nНачальные кластера\n')
-for i in range(len(originalCluster)):
-    f.write(str(originalCluster[i]) + "\t")
-
-f.write('\n\n')
+f.write('\n')
 
 sse = 0
 h = 0
@@ -61,7 +39,7 @@ allChangedCentroid = []
 while h < 30:
     f.write('Итерация №' + str(h + 1) + '\n')
     f.write('Начальные центроиды\n')
-    centroid = [[r.randint(min(min(dataSet)), max(max(dataSet))) for j in range(len(dataSet[0]))] for i in range(k)]
+    centroid = [[round(r.uniform(min(min(dataSet)), max(max(dataSet))), 2) for j in range(len(dataSet[0]))] for i in range(k)]
     cluster = [i for i in originalCluster]
     allOriginalCentroids.append(centroid)
 
@@ -94,11 +72,7 @@ while h < 30:
         f.write('\n')
     f.write('\n')
 
-    f.write('Полученные кластера\n')
-    for i in range(len(cluster)):
-        f.write(str(cluster[i]) + "\t")
-
-    f.write('\n\n')
+    f.write('\n')
 
     f.write('SSE: ' + str(sse) + '\n\n')
 
@@ -157,6 +131,7 @@ while h < 30:
 
     centroid = [[allOriginalCentroids[h][i][j] for j in range(len(allOriginalCentroids[h][i]))] for i in range(k)]
     cluster = [i for i in originalCluster]
+
     f.write('\nEuclidDist\n')
     while True:
         euclidDist = [[kmeans.euclideanDistance(dataSet[j], centroid[i]) for i in range(len(centroid))] for j in
@@ -179,11 +154,7 @@ while h < 30:
         f.write('\n')
     f.write('\n')
 
-    f.write('Полученные кластера\n')
-    for i in range(len(cluster)):
-        f.write(str(cluster[i]) + "\t")
-
-    f.write('\n\n')
+    f.write('\n')
 
     f.write('SSE: ' + str(sse) + '\n\n')
     fitness = kmeans.fitnessEuclidDist(dataSet, cluster, centroid, k)
@@ -242,6 +213,7 @@ while h < 30:
 
     centroid = [[allOriginalCentroids[h][i][j] for j in range(len(allOriginalCentroids[h][i]))] for i in range(k)]
     cluster = [i for i in originalCluster]
+
     f.write('\nCos+Dist\n')
     while True:
         cosSimDist = [[kmeans.obj(dataSet[j], centroid[i]) for i in range(len(centroid))] for j in
@@ -264,11 +236,7 @@ while h < 30:
         f.write('\n')
     f.write('\n')
 
-    f.write('Полученные кластера\n')
-    for i in range(len(cluster)):
-        f.write(str(cluster[i]) + "\t")
-
-    f.write('\n\n')
+    f.write('\n')
 
     f.write('SSE: ' + str(sse) + '\n\n')
     fitness = kmeans.fitnessCosWithDist(dataSet, cluster, centroid, k)
@@ -328,4 +296,3 @@ while h < 30:
     f.write('\n')
     h += 1
 f.close()
-

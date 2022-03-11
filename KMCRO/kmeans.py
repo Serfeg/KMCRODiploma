@@ -1,4 +1,5 @@
 import math as m
+import random as r
 
 """
     Здесь в файле указаны два способа расчёта метода к-средних. Использование классического способа
@@ -90,6 +91,26 @@ def kMeansWithCos(dataSet, cluster, kNumber):
             break
         else:
             cluster = newCluster
+
+    sse = countSseCos(cosSim)
+    return newCluster, centroid, sse, k
+
+
+def kMeansWithCosRandomCentroid(dataSet, cluster, kNumber):
+    k = 0
+    centroid = [[round(r.uniform(min(min(dataSet)), max(max(dataSet))), 2) for i in range(len(dataSet[0]))] for j in range(kNumber)]
+    while True:
+        k += 1
+        cosSim = [[cosineSimilarity(dataSet[j], centroid[i]) for i in range(len(centroid))] for j in
+                          range(len(dataSet))]
+        newCluster = [cosSim[i].index(max(cosSim[i])) + 1 for i in range(len(cosSim))]
+
+        if cluster == newCluster:
+            break
+        else:
+            cluster = newCluster
+            centroid = [[findCentroid(dataSet, col, cluster, i + 1) for col in range(len(dataSet[0]))] for i in
+                        range(kNumber)]
 
     sse = countSseCos(cosSim)
     return newCluster, centroid, sse, k
