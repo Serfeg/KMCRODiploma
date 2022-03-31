@@ -100,7 +100,7 @@ if __name__ == "__main__":
             dataSet[i][j] *= 1/sum
     #print(min(min(dataSet)), max(max(dataSet)))
     #dataSet = [[dataSet[i][j] / len(dataSet) for j in range(len(dataSet[i]))] for i in range(len(dataSet))]
-    df = pd.read_csv('33_42.txt', delimiter="\t")
+    df = pd.read_csv(fName, delimiter="\t")
 
     # Количество кластеров и точек
     print("Введите количество кластеров")
@@ -121,7 +121,6 @@ if __name__ == "__main__":
 
     for i in range(len(centroid)):
         dfCentroid['Cluster ' + str(i + 1)] = centroid[i]
-
     #fitness = kmeans.fitnessEuclidDist(dataSet, newCluster, centroid, k)
     fitness = kmeans.fitnessCosWithDist(dataSet, newCluster, centroid, k)
     print(f"Fitness K-means: {fitness}")
