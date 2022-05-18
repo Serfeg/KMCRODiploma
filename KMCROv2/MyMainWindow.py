@@ -13,14 +13,17 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
 
         self.clusterFile = ''
+        self.countCluster = 2
         self.typeKmeans = 'EuclidDist'
         self.browserBtn.clicked.connect(self.browseFile)
+        self.countClusterSBox.valueChanged.connect(self.countClusterResult)
         self.euclidDistRadio.toggled.connect(self.checkMethodKMeans)
         self.cosineSimRadio.toggled.connect(self.checkMethodKMeans)
+        self.cosEuclidRadio.toggled.connect(self.checkMethodKMeans)
         self.performBtn.clicked.connect(self.performKmeans)
 
     def browseFile(self):
-        fileName = QFileDialog.getOpenFileNames(None, 'Open File', './')[0]
+        fileName = QFileDialog.getOpenFileNames(self, 'Open File', './')[0]
         if fileName:
             self.clusterFile = fileName[0]
             self.fileNameLineEdit.setText(fileName[0])
@@ -30,6 +33,11 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
             self.typeKmeans = 'EuclidDist'
         elif self.cosineSimRadio.isChecked():
             self.typeKmeans = 'CosSim'
+        elif self.cosEuclidRadio.isChecked():
+            self.typeKmeans = 'CosEuclid'
+
+    def countClusterResult(self):
+        self.countCluster = self.countClusterSBox.value()
 
     def performKmeans(self):
         if self.clusterFile != '':
@@ -41,14 +49,14 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
             #     sum = m.sqrt(sum)
             #     for j in range(len(dataSet[i])):
             #         dataSet[i][j] *= 1 / sum
-            k = 4
+            k = self.countCluster
             originalCluster = [r.randint(1, k) for i in range(len(dataSet))]
 
             if self.typeKmeans == 'EuclidDist':
                 newCluster, centroid, sse, countIterKMeans = kmeans.kMeans(dataSet, originalCluster, k)
             elif self.typeKmeans == 'CosSim':
                 newCluster, centroid, sse, countIterKMeans = kmeans.kMeansWithCos(dataSet, originalCluster, k)
-            text = f"Count of Cluster: {k}\nSSE: {sse}\nCount of Iteration K-means: {countIterKMeans}\n"
+            text = f"Type K-means: {self.typeKmeans}\nCount of Cluster: {k}\nSSE: {sse}\nCount of Iteration K-means: {countIterKMeans}\n"
             self.outputEdit.setText(text)
         else:
             self.outputEdit.setText('Выберите файл')
