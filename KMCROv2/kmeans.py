@@ -56,28 +56,6 @@ def kMeans(dataSet, cluster, kNumber):
     sse = countSse(euclidDist)
     return cluster, centroid, sse, k
 
-
-def kMeansRandom(dataSet, cluster, kNumber):
-    k = 0
-    centroid = [[r.randint(-10, 10) for i in range(len(dataSet[0]))] for j in
-                range(kNumber)]
-    while True:
-        k += 1
-        euclidDist = [[euclideanDistance(dataSet[j], centroid[i]) for i in range(len(centroid))] for j in
-                      range(len(dataSet))]
-        newCluster = [euclidDist[i].index(min(euclidDist[i])) + 1 for i in range(len(euclidDist))]
-
-        if cluster == newCluster:
-            break
-        else:
-            cluster = newCluster
-            centroid = [[findCentroid(dataSet, col, cluster, i + 1) for col in range(len(dataSet[0]))] for i in
-                        range(kNumber)]
-
-    sse = countSse(euclidDist)
-    return cluster, centroid, sse, k
-
-
 # к-средние с косинусовым сходством
 def cosineSimilarity(dataSetRow, centroid):
     sumInUp = 0
@@ -117,25 +95,23 @@ def kMeansWithCos(dataSet, cluster, kNumber):
     return newCluster, centroid, sse, k
 
 
-def kMeansWithCosRandomCentroid(dataSet, cluster, kNumber):
+def kMeansWithCosAndEuclid(dataSet, cluster, kNumber):
     k = 0
-    centroid = [[round(r.uniform(min(min(dataSet)), max(max(dataSet))), 2) for i in range(len(dataSet[0]))] for j in range(kNumber)]
     while True:
         k += 1
-        cosSim = [[cosineSimilarity(dataSet[j], centroid[i]) for i in range(len(centroid))] for j in
+        centroid = [[findCentroid(dataSet, col, cluster, i + 1) for col in range(len(dataSet[0]))] for i in
+                        range(kNumber)]
+        objectiveF = [[obj(dataSet[j], centroid[i]) for i in range(len(centroid))] for j in
                           range(len(dataSet))]
-        newCluster = [cosSim[i].index(max(cosSim[i])) + 1 for i in range(len(cosSim))]
+        newCluster = [objectiveF[i].index(max(objectiveF[i])) + 1 for i in range(len(objectiveF))]
 
         if cluster == newCluster:
             break
         else:
             cluster = newCluster
-            centroid = [[findCentroid(dataSet, col, cluster, i + 1) for col in range(len(dataSet[0]))] for i in
-                        range(kNumber)]
 
-    sse = countSseCos(cosSim)
+    sse = countSseCos(objectiveF)
     return newCluster, centroid, sse, k
-
 
 # Fitness
 def distance(dataSetRow, centroid):

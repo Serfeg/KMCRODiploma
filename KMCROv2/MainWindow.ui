@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>632</width>
-    <height>552</height>
+    <height>587</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -145,14 +145,66 @@
      </layout>
     </item>
     <item>
-     <widget class="QCheckBox" name="checkBox">
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <item>
+       <widget class="QCheckBox" name="croCheckBox">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Использовать CRO</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="countIterCroLbl">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Количество итераций CRO</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="countIterCroSBox">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="readOnly">
+         <bool>false</bool>
+        </property>
+        <property name="minimum">
+         <number>1</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="normalizationCheckBox">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
       <property name="text">
-       <string>Использовать CRO</string>
+       <string>Нормировать данные</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QTextEdit" name="outputEdit"/>
+     <widget class="QTextEdit" name="outputEdit">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+     </widget>
     </item>
     <item>
      <widget class="QPushButton" name="performBtn">

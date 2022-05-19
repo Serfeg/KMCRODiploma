@@ -60,3 +60,4 @@ def intermolecularSynthesis(lenDataSet, kNumber):
         else:
             newPhi.append(originalPhi2[i])
     return newPhi
+
