@@ -8,7 +8,7 @@ def swap(x, y):
     return x, y
 
 
-# Первый метод, индекс 0
+# Первый метод
 def singleMoleculeCollision(lenDataSet, kNumber):
     originalPhi = [r.randint(1, kNumber) for _ in range(lenDataSet)]
     newPhi = [i for i in originalPhi]
@@ -16,7 +16,7 @@ def singleMoleculeCollision(lenDataSet, kNumber):
     return newPhi
 
 
-# Второй метод, индекс 1
+# Второй метод
 def singleMoleculeDecomposition(lenDataSet, kNumber):
     originalPhi = [r.randint(1, kNumber) for _ in range(lenDataSet)]
     oddPhi = [i for i in originalPhi]
@@ -29,7 +29,7 @@ def singleMoleculeDecomposition(lenDataSet, kNumber):
     return oddPhi, evenPhi
 
 
-# Третий метод, индекс 2
+# Третий метод
 def intermolecularCollision(lenDataSet, kNumber):
     originalPhi1 = [r.randint(1, kNumber) for _ in range(lenDataSet)]
     originalPhi2 = [r.randint(1, kNumber) for _ in range(lenDataSet)]
@@ -48,7 +48,7 @@ def intermolecularCollision(lenDataSet, kNumber):
     return newPhi1, newPhi2
 
 
-# Четвёртый метод, индекс 3
+# Четвёртый метод
 def intermolecularSynthesis(lenDataSet, kNumber):
     originalPhi1 = [r.randint(1, kNumber) for _ in range(lenDataSet)]
     originalPhi2 = [r.randint(1, kNumber) for _ in range(lenDataSet)]

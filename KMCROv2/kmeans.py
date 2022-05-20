@@ -113,6 +113,7 @@ def kMeansWithCosAndEuclid(dataSet, cluster, kNumber):
     sse = countSseCos(objectiveF)
     return newCluster, centroid, sse, k
 
+
 # Fitness
 def distance(dataSetRow, centroid):
     sum = 0

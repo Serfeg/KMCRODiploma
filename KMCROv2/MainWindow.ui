@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>632</width>
+    <width>749</width>
     <height>587</height>
    </rect>
   </property>
@@ -50,6 +50,37 @@
         </property>
         <property name="text">
          <string>Обзор</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QLabel" name="clusterLbl">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Количетсво кластеров</string>
+        </property>
+        <property name="margin">
+         <number>5</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="countClusterSBox">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="minimum">
+         <number>2</number>
         </property>
        </widget>
       </item>
@@ -114,37 +145,6 @@
      </layout>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_3">
-      <item>
-       <widget class="QLabel" name="clusterLbl">
-        <property name="font">
-         <font>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Количетсво кластеров</string>
-        </property>
-        <property name="margin">
-         <number>5</number>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QSpinBox" name="countClusterSBox">
-        <property name="font">
-         <font>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="minimum">
-         <number>2</number>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
      <layout class="QHBoxLayout" name="horizontalLayout_5">
       <item>
        <widget class="QCheckBox" name="croCheckBox">
@@ -175,6 +175,11 @@
         <property name="enabled">
          <bool>false</bool>
         </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
         <property name="readOnly">
          <bool>false</bool>
         </property>
@@ -196,6 +201,37 @@
        <string>Нормировать данные</string>
       </property>
      </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QLabel" name="countIterLbl">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Количество итераций</string>
+        </property>
+        <property name="margin">
+         <number>5</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="countIterSBox">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="minimum">
+         <number>1</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
     <item>
      <widget class="QTextEdit" name="outputEdit">

@@ -74,30 +74,30 @@ def makeEpsCluster(fileName, eps):
 
 
 if __name__ == "__main__":
-    print('Введите номер файла.\n\t'
-          '1. 33_42\n\t'
-          '2. 33_37_42\n\t'
-          '3. 11_33_37_42\n\t'
-          '4. total_sample_no_empties')
-    fileNumber = int(input())
-    if fileNumber == 1:
-        fName = '33_42.txt'
-    elif fileNumber == 2:
-        fName = '33_37_42.txt'
-    elif fileNumber == 3:
-        fName = '11_33_37_42.txt'
-    elif fileNumber == 4:
-        fName = 'total_sample_no_empties.txt'
-    #fName = '33_42.txt'
+    # print('Введите номер файла.\n\t'
+    #       '1. 33_42\n\t'
+    #       '2. 33_37_42\n\t'
+    #       '3. 11_33_37_42\n\t'
+    #       '4. total_sample_no_empties')
+    # fileNumber = int(input())
+    # if fileNumber == 1:
+    #     fName = '33_42.txt'
+    # elif fileNumber == 2:
+    #     fName = '33_37_42.txt'
+    # elif fileNumber == 3:
+    #     fName = '11_33_37_42.txt'
+    # elif fileNumber == 4:
+    #     fName = 'total_sample_no_empties.txt'
+    fName = '33_42.txt'
     dataSet, eps = makeDataSet(fName)
-    epsCluster = makeEpsCluster(fName, eps)
-    for i in range(len(dataSet)):
-        sum = 0
-        for j in range(len(dataSet[i])):
-            sum += dataSet[i][j] ** 2
-        sum = m.sqrt(sum)
-        for j in range(len(dataSet[i])):
-            dataSet[i][j] *= 1/sum
+    #epsCluster = makeEpsCluster(fName, eps)
+    # for i in range(len(dataSet)):
+    #     sum = 0
+    #     for j in range(len(dataSet[i])):
+    #         sum += dataSet[i][j] ** 2
+    #     sum = m.sqrt(sum)
+    #     for j in range(len(dataSet[i])):
+    #         dataSet[i][j] *= 1/sum
     #print(min(min(dataSet)), max(max(dataSet)))
     #dataSet = [[dataSet[i][j] / len(dataSet) for j in range(len(dataSet[i]))] for i in range(len(dataSet))]
     df = pd.read_csv(fName, delimiter="\t")
@@ -112,8 +112,9 @@ if __name__ == "__main__":
     # Рандомный кластер на длину датасета
     originalCluster = [r.randint(1, k) for i in range(len(dataSet))]
 
-    #newCluster, centroid, sse, countIterKMeans = kmeans.kMeans(dataSet, originalCluster, k)
-    newCluster, centroid, sse, countIterKMeans = kmeans.kMeansWithCos(dataSet, originalCluster, k)
+    print(originalCluster)
+    newCluster, centroid, sse, countIterKMeans = kmeans.kMeans(dataSet, originalCluster, k)
+    #newCluster, centroid, sse, countIterKMeans = kmeans.kMeansWithCos(dataSet, originalCluster, k)
     #newCluster, centroid, sse, countIterKMeans = kmeans.kMeansWithCosRandomCentroid(dataSet, originalCluster, k)
     #newCluster, centroid, sse, countIterKMeans = kmeans.kMeansRandom(dataSet, originalCluster, k)
 
@@ -134,13 +135,13 @@ if __name__ == "__main__":
 
         #singleMoleculeCollision
         cluster1 = cro.singleMoleculeCollision(len(dataSet), k)
-        croFitness.append(kmeans.fitnessCosWithDist(dataSet, cluster1, centroid, k))
+        croFitness.append(kmeans.fitnessEuclidDist(dataSet, cluster1, centroid, k))
         croList.append(cluster1)
 
         #singleMoleculeDecomposition
         clusterOdd, clusterEven = cro.singleMoleculeDecomposition(len(dataSet), k)
-        fitnessOdd = kmeans.fitnessCosWithDist(dataSet, clusterOdd, centroid, k)
-        fitnessEven = kmeans.fitnessCosWithDist(dataSet, clusterEven, centroid, k)
+        fitnessOdd = kmeans.fitnessEuclidDist(dataSet, clusterOdd, centroid, k)
+        fitnessEven = kmeans.fitnessEuclidDist(dataSet, clusterEven, centroid, k)
         if fitnessOdd >= fitnessEven:
             croFitness.append(fitnessOdd)
             croList.append(clusterOdd)
@@ -150,8 +151,8 @@ if __name__ == "__main__":
 
         #intermolecularCollision
         clusterPhi1, clusterPhi2 = cro.intermolecularCollision(len(dataSet), k)
-        fitnessPhi1 = kmeans.fitnessCosWithDist(dataSet, clusterPhi1, centroid, k)
-        fitnessPhi2 = kmeans.fitnessCosWithDist(dataSet, clusterPhi2, centroid, k)
+        fitnessPhi1 = kmeans.fitnessEuclidDist(dataSet, clusterPhi1, centroid, k)
+        fitnessPhi2 = kmeans.fitnessEuclidDist(dataSet, clusterPhi2, centroid, k)
         if fitnessPhi1 >= fitnessPhi2:
             croFitness.append(fitnessPhi1)
             croList.append(clusterPhi1)
@@ -161,12 +162,12 @@ if __name__ == "__main__":
 
         #intermolecularSynthesis
         cluster2 = cro.intermolecularSynthesis(len(dataSet), k)
-        croFitness.append(kmeans.fitnessCosWithDist(dataSet, cluster2, centroid, k))
+        croFitness.append(kmeans.fitnessEuclidDist(dataSet, cluster2, centroid, k))
         croList.append(cluster2)
 
-        if fitness < max(croFitness):
-            fitness = max(croFitness)
-            newCluster = croList[croFitness.index(max(croFitness))]
+        if fitness > min(croFitness):
+            fitness = min(croFitness)
+            newCluster = croList[croFitness.index(min(croFitness))]
 
         if countIterCRO == iterCRO:
             break
@@ -176,6 +177,6 @@ if __name__ == "__main__":
     print(f"Count of Cluster: {k}\nSSE: {sse}\nCount of Iteration K-means: {countIterKMeans}\n"
           f"Fitness CRO: {fitness}\n"
           f"Centroid:\n{dfCentroid}\n\n"
-          f"DataSet with Clusters:\n{df}\n\n"
-          f"Confusion Matrix:\n{confusion_matrix(epsCluster, newCluster)}")
+          f"DataSet with Clusters:\n{df}\n\n")
+          #f"Confusion Matrix:\n{confusion_matrix(epsCluster, newCluster)}")
 
