@@ -21,7 +21,7 @@ def makeDataSet(filename):
     for i in range(len(dataSet)):
         eps.append(int(dataSet[i][0]))
     for i in range(len(dataSet)):
-        dataSet[i].pop(0)
+        dataSet[i].pop(-1)
     return dataSet, eps
 
 def makeEpsCluster(fileName, eps):
@@ -72,6 +72,19 @@ def makeEpsCluster(fileName, eps):
                 epsCluster.append(7)
     return epsCluster
 
+def replaceSymb(inputF, outputF):
+    # the input file
+    fin = open(inputF, "rt")
+    # the output file which stores result
+    fout = open(outputF, "wt")
+    # iteration for each line in the input file
+    for line in fin:
+        # replacing the string and write to output file
+        fout.write(line.replace(',', '.'))
+    # closing the input and output files
+    fin.close()
+    fout.close()
+
 
 if __name__ == "__main__":
     # print('Введите номер файла.\n\t'
@@ -88,8 +101,10 @@ if __name__ == "__main__":
     #     fName = '11_33_37_42.txt'
     # elif fileNumber == 4:
     #     fName = 'total_sample_no_empties.txt'
-    fName = '33_42.txt'
+    fName = 'taxacia_all_delete.txt'
+    #replaceSymb(fName, 'text.txt')
     dataSet, eps = makeDataSet(fName)
+    print(dataSet)
     #epsCluster = makeEpsCluster(fName, eps)
     # for i in range(len(dataSet)):
     #     sum = 0
