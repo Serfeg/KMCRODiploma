@@ -80,7 +80,7 @@ def replaceSymb(inputF, outputF):
     # iteration for each line in the input file
     for line in fin:
         # replacing the string and write to output file
-        fout.write(line.replace(',', '.'))
+        fout.write(line.replace(';', '\t'))
     # closing the input and output files
     fin.close()
     fout.close()
@@ -101,10 +101,10 @@ if __name__ == "__main__":
     #     fName = '11_33_37_42.txt'
     # elif fileNumber == 4:
     #     fName = 'total_sample_no_empties.txt'
-    fName = 'taxacia_all_delete.txt'
-    #replaceSymb(fName, 'text.txt')
+    fName = 'taxacia_klimat7_1.txt'
+    replaceSymb(fName, 'text.txt')
     dataSet, eps = makeDataSet(fName)
-    print(dataSet)
+
     #epsCluster = makeEpsCluster(fName, eps)
     # for i in range(len(dataSet)):
     #     sum = 0
@@ -128,8 +128,8 @@ if __name__ == "__main__":
     originalCluster = [r.randint(1, k) for i in range(len(dataSet))]
 
     print(originalCluster)
-    newCluster, centroid, sse, countIterKMeans = kmeans.kMeans(dataSet, originalCluster, k)
-    #newCluster, centroid, sse, countIterKMeans = kmeans.kMeansWithCos(dataSet, originalCluster, k)
+    #newCluster, centroid, sse, countIterKMeans = kmeans.kMeans(dataSet, originalCluster, k)
+    newCluster, centroid, sse, countIterKMeans = kmeans.kMeansWithCos(dataSet, originalCluster, k)
     #newCluster, centroid, sse, countIterKMeans = kmeans.kMeansWithCosRandomCentroid(dataSet, originalCluster, k)
     #newCluster, centroid, sse, countIterKMeans = kmeans.kMeansRandom(dataSet, originalCluster, k)
 

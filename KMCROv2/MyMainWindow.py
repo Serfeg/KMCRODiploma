@@ -79,6 +79,7 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
             k = self.countCluster
             originalCluster = [r.randint(1, k) for _ in range(len(dataSet))]
 
+            makeAnalysis(dataSet, k, originalCluster, self.countIterAnalysis, self.countIterCRO)
             if self.typeKmeans == 'EuclidDist':
                 newCluster, centroid, sse, countIterKMeans = kmeans.kMeans(dataSet, originalCluster, k)
                 fitness = kmeans.fitnessEuclidDist(dataSet, newCluster, centroid, k)
@@ -90,7 +91,6 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
                 fitness = kmeans.fitnessCosWithDist(dataSet, newCluster, centroid, k)
             text = f"Type K-means: {self.typeKmeans}\nCount of Cluster: {k}\nSSE: {sse}\nCount of Iteration K-means: {countIterKMeans}\nFitness: {fitness}"
             self.outputEdit.setText(text)
-            makeAnalysis(dataSet, k, originalCluster, self.countIterAnalysis, self.countIterCRO)
         else:
             self.outputEdit.setText('Выберите файл')
 
@@ -278,8 +278,9 @@ def makeAnalysis(dataSet, k, originalCluster, countIterAnalysis, iterCRO):
     CRO = []
     histKMeansVariationList = []
     histKMeansSpanFactor = []
-    rowEpochs.append(['Euclidean Distance'])
-
+    #rowEpochs.append(['Euclidean Distance'])
+    file = open('text.txt', 'w')
+    file.write('Euclidean Distance\n')
     while epochs < countIterAnalysis:
         epochs += 1
         newCluster, centroid, sse, countIterKMeans = kmeans.kMeans(dataSet, originalCluster, k)
@@ -289,19 +290,33 @@ def makeAnalysis(dataSet, k, originalCluster, countIterAnalysis, iterCRO):
         CRO.append(newFitness)
         rowEpochs.append([epochs, sse, newFitness])
 
-    rowEpochs.append(["Min", str(min(kMeans)), str(min(CRO))])
-    rowEpochs.append(["Max", str(max(kMeans)), str(max(CRO))])
-    rowEpochs.append(["Mean", str(statistics.mean(kMeans)), str(statistics.mean(CRO))])
-    rowEpochs.append(["Standard deviation", str(statistics.pstdev(kMeans)), str(statistics.pstdev(CRO))])
-    rowEpochs.append(["Coefficient of variation", str((statistics.pstdev(kMeans) / statistics.mean(kMeans)) * 100),
-                      str((statistics.pstdev(CRO) / statistics.mean(CRO)) * 100)])
-    rowEpochs.append(["Span Factor", str(max(kMeans)-min(kMeans)), str(max(CRO)-min(CRO))])
-    histKMeansVariationList.append((statistics.pstdev(CRO) / statistics.mean(CRO)) * 100)
+    # rowEpochs.append(["Min", str(min(kMeans)), str(min(CRO))])
+    # rowEpochs.append(["Max", str(max(kMeans)), str(max(CRO))])
+    # rowEpochs.append(["Mean", str(statistics.mean(kMeans)), str(statistics.mean(CRO))])
+    # rowEpochs.append(["Standard deviation", str(statistics.pstdev(kMeans)), str(statistics.pstdev(CRO))])
+    # rowEpochs.append(["Coefficient of variation", str((statistics.pstdev(kMeans) / statistics.mean(kMeans)) * 100),
+    #                   str((statistics.pstdev(CRO) / statistics.mean(CRO)) * 100)])
+    # rowEpochs.append(["Span Factor", str(max(kMeans)-min(kMeans)), str(max(CRO)-min(CRO))])
+    for i in range(len(rowEpochs)):
+        text = ""
+        for j in range(len(rowEpochs[i])):
+            text += str(rowEpochs[i][j]) + "\t"
+        file.write(text + "\n")
+    file.write("Min" + " " + str(min(kMeans)) + " " + str(min(CRO)) + "\n")
+    file.write("Max" + " " + str(max(kMeans)) + " " + str(max(CRO)) + "\n")
+    file.write("Mean" + " " + str(statistics.mean(kMeans)) + " " + str(statistics.mean(CRO)) + "\n")
+    file.write("Standard deviation" + " " + str(statistics.pstdev(kMeans)) + " " + str(statistics.pstdev(CRO)) + "\n")
+    file.write("Coefficient of variation" + " " + str((statistics.pstdev(kMeans) / statistics.mean(kMeans)) * 100) + " " +
+                      str((statistics.pstdev(CRO) / statistics.mean(CRO)) * 100) + "\n")
+    file.write("Span Factor" + " " + str(max(kMeans) - min(kMeans)) + " " + str(max(CRO) - min(CRO)) + "\n")
+
+    #histKMeansVariationList.append((statistics.pstdev(CRO) / statistics.mean(CRO)) * 100)
+    rowEpochs = []
     epochs = 0
     kMeans = []
     CRO = []
-    rowEpochs.append(['Cosine Similarity'])
-
+    #rowEpochs.append(['Cosine Similarity'])
+    file.write('Cosine Similarity\n')
     while epochs < countIterAnalysis:
         epochs += 1
         newCluster, centroid, sse, countIterKMeans = kmeans.kMeansWithCos(dataSet, originalCluster, k)
@@ -311,19 +326,26 @@ def makeAnalysis(dataSet, k, originalCluster, countIterAnalysis, iterCRO):
         CRO.append(newFitness)
         rowEpochs.append([epochs, sse, newFitness])
 
-    rowEpochs.append(["Min", str(min(kMeans)), str(min(CRO))])
-    rowEpochs.append(["Max", str(max(kMeans)), str(max(CRO))])
-    rowEpochs.append(["Mean", str(statistics.mean(kMeans)), str(statistics.mean(CRO))])
-    rowEpochs.append(["Standard deviation", str(statistics.pstdev(kMeans)), str(statistics.pstdev(CRO))])
-    rowEpochs.append(["Coefficient of variation", str((statistics.pstdev(kMeans) / statistics.mean(kMeans)) * 100),
-                      str((statistics.pstdev(CRO) / statistics.mean(CRO)) * 100)])
-    rowEpochs.append(["Span Factor", str(max(kMeans)-min(kMeans)), str(max(CRO)-min(CRO))])
-    histKMeansVariationList.append((statistics.pstdev(CRO) / statistics.mean(CRO)) * 100)
+    for i in range(len(rowEpochs)):
+        text = ""
+        for j in range(len(rowEpochs[i])):
+            text += str(rowEpochs[i][j]) + "\t"
+        file.write(text + "\n")
+    file.write("Min" + " " + str(min(kMeans)) + " " + str(min(CRO)) + "\n")
+    file.write("Max" + " " + str(max(kMeans)) + " " + str(max(CRO)) + "\n")
+    file.write("Mean" + " " + str(statistics.mean(kMeans)) + " " + str(statistics.mean(CRO))+ "\n")
+    file.write("Standard deviation" + " " + str(statistics.pstdev(kMeans)) + " " + str(statistics.pstdev(CRO))+ "\n")
+    file.write(
+        "Coefficient of variation" + " " + str((statistics.pstdev(kMeans) / statistics.mean(kMeans)) * 100) + " " +
+        str((statistics.pstdev(CRO) / statistics.mean(CRO)) * 100) + "\n")
+    file.write("Span Factor" + " " + str(max(kMeans) - min(kMeans)) + " " + str(max(CRO) - min(CRO)) + "\n")
+
     epochs = 0
     kMeans = []
     CRO = []
-    rowEpochs.append(['Cosine Similarity + Euclidean Distance'])
-
+    rowEpochs = []
+    #rowEpochs.append(['Cosine Similarity + Euclidean Distance'])
+    file.write('Cosine Similarity + Euclidean Distance\n')
     while epochs < countIterAnalysis:
         epochs += 1
         newCluster, centroid, sse, countIterKMeans = kmeans.kMeansWithCosAndEuclid(dataSet, originalCluster, k)
@@ -333,39 +355,34 @@ def makeAnalysis(dataSet, k, originalCluster, countIterAnalysis, iterCRO):
         CRO.append(newFitness)
         rowEpochs.append([epochs, sse, newFitness])
 
-    rowEpochs.append(["Min", str(min(kMeans)), str(min(CRO))])
-    rowEpochs.append(["Max", str(max(kMeans)), str(max(CRO))])
-    rowEpochs.append(["Mean", str(statistics.mean(kMeans)), str(statistics.mean(CRO))])
-    rowEpochs.append(["Standard deviation", str(statistics.pstdev(kMeans)), str(statistics.pstdev(CRO))])
-    rowEpochs.append(["Coefficient of variation", str((statistics.pstdev(kMeans) / statistics.mean(kMeans)) * 100),
-                      str((statistics.pstdev(CRO) / statistics.mean(CRO)) * 100)])
-    rowEpochs.append(["Span Factor", str(max(kMeans) - min(kMeans)), str(max(CRO) - min(CRO))])
-    histKMeansVariationList.append((statistics.pstdev(CRO) / statistics.mean(CRO)) * 100)
+    for i in range(len(rowEpochs)):
+        text = ""
+        for j in range(len(rowEpochs[i])):
+            text += str(rowEpochs[i][j]) + "\t"
+        file.write(text + "\n")
+    file.write("Min" + " " + str(min(kMeans)) + " " + str(min(CRO)) + "\n")
+    file.write("Max" + " " + str(max(kMeans)) + " " + str(max(CRO)) + "\n")
+    file.write("Mean" + " " + str(statistics.mean(kMeans)) + " " + str(statistics.mean(CRO)) + "\n")
+    file.write("Standard deviation" + " " + str(statistics.pstdev(kMeans)) + " " + str(statistics.pstdev(CRO)) + "\n")
+    file.write("Coefficient of variation" + " " + str((statistics.pstdev(kMeans) / statistics.mean(kMeans)) * 100) + " " +
+                      str((statistics.pstdev(CRO) / statistics.mean(CRO)) * 100) + "\n")
+    file.write("Span Factor" + " " + str(max(kMeans) - min(kMeans)) + " " + str(max(CRO) - min(CRO)) + "\n")
 
-    if len(rowEpochs) != 0:
-        file = open('text.txt', 'w')
-        for i in range(len(rowEpochs)):
-            text = ""
-            for j in range(len(rowEpochs[i])):
-                text += str(rowEpochs[i][j]) + "\t"
-            file.write(text + "\n")
-        #df = pd.DataFrame(rowEpochs, columns=['kMeans', 'CRO'])
-
-        file.close()
+    file.close()
     #print(df)
-    x = ['Euclidean Distance', 'Cosine Similarity', 'Cos + Euclid']
-    print(histKMeansVariationList)
-    colors = ['red', 'green', 'blue']
-    #plt.hist(histKMeansDeviationList, color='red', edgecolor='black')
-    fig, ax = plt.subplots()
-
-    ax.bar(x, histKMeansVariationList)
-
-    ax.set_facecolor('seashell')
-    fig.set_facecolor('floralwhite')
-
-    plt.title('Histogram of Standard deviation')
-    plt.show()
+    # x = ['Euclidean Distance', 'Cosine Similarity', 'Cos + Euclid']
+    # print(histKMeansVariationList)
+    # colors = ['red', 'green', 'blue']
+    # #plt.hist(histKMeansDeviationList, color='red', edgecolor='black')
+    # fig, ax = plt.subplots()
+    #
+    # ax.bar(x, histKMeansVariationList)
+    #
+    # ax.set_facecolor('seashell')
+    # fig.set_facecolor('floralwhite')
+    #
+    # plt.title('Histogram of Standard deviation')
+    # plt.show()
 
 if __name__ == "__main__":
     import sys
