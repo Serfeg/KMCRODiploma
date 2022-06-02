@@ -33,8 +33,8 @@ def singleMoleculeDecomposition(lenDataSet, kNumber):
 def intermolecularCollision(lenDataSet, kNumber):
     originalPhi1 = [r.randint(1, kNumber) for _ in range(lenDataSet)]
     originalPhi2 = [r.randint(1, kNumber) for _ in range(lenDataSet)]
-    newPhi1 = [i for i in originalPhi1]
-    newPhi2 = [i for i in originalPhi2]
+    newPhi1 = [i for i in originalPhi2]
+    newPhi2 = [i for i in originalPhi1]
     x = 0
     y = 0
     while x == y:

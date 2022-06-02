@@ -79,7 +79,7 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
             k = self.countCluster
             originalCluster = [r.randint(1, k) for _ in range(len(dataSet))]
 
-            makeAnalysis(dataSet, k, originalCluster, self.countIterAnalysis, self.countIterCRO)
+            #makeAnalysis(dataSet, k, self.countIterAnalysis, self.countIterCRO)
             if self.typeKmeans == 'EuclidDist':
                 newCluster, centroid, sse, countIterKMeans = kmeans.kMeans(dataSet, originalCluster, k)
                 fitness = kmeans.fitnessEuclidDist(dataSet, newCluster, centroid, k)
@@ -109,7 +109,7 @@ def makeDataSet(filename):
     for i in range(len(dataSet)):
         eps.append(int(dataSet[i][0]))
     for i in range(len(dataSet)):
-        dataSet[i].pop(-1)
+        dataSet[i].pop(0)
     return dataSet, eps
 
 
@@ -271,37 +271,26 @@ def makeFitnessCosAndEuclid(dataSet, k, centroid, iterCRO):
     return newFitness, newCluster
 
 
-def makeAnalysis(dataSet, k, originalCluster, countIterAnalysis, iterCRO):
-    rowEpochs = []
+def makeAnalysis(dataSet, k, countIterAnalysis, iterCRO):
     epochs = 0
     kMeans = []
     CRO = []
-    histKMeansVariationList = []
-    histKMeansSpanFactor = []
-    #rowEpochs.append(['Euclidean Distance'])
     file = open('text.txt', 'w')
     file.write('Euclidean Distance\n')
+    file.write('Iteration\tSSE\tFitness\n')
     while epochs < countIterAnalysis:
         epochs += 1
+        originalCluster = [r.randint(1, k) for _ in range(len(dataSet))]
         newCluster, centroid, sse, countIterKMeans = kmeans.kMeans(dataSet, originalCluster, k)
         #fitness = kmeans.fitnessEuclidDist(dataSet, newCluster, centroid, k)
-        kMeans.append(sse)
         newFitness, cluster = makeFitnessEuclidDist(dataSet, k, centroid, iterCRO)
+        kMeans.append(sse)
         CRO.append(newFitness)
-        rowEpochs.append([epochs, sse, newFitness])
+        file.write(str(epochs)+"\t"+str(sse)+"\t"+str(newFitness)+"\n")
+        file.write("\tКластера\n")
+        for i in range(len(newCluster)):
+            file.write("\t\tСтрока "+str(i+1)+"\t"+str(newCluster[i]-1)+"\n")
 
-    # rowEpochs.append(["Min", str(min(kMeans)), str(min(CRO))])
-    # rowEpochs.append(["Max", str(max(kMeans)), str(max(CRO))])
-    # rowEpochs.append(["Mean", str(statistics.mean(kMeans)), str(statistics.mean(CRO))])
-    # rowEpochs.append(["Standard deviation", str(statistics.pstdev(kMeans)), str(statistics.pstdev(CRO))])
-    # rowEpochs.append(["Coefficient of variation", str((statistics.pstdev(kMeans) / statistics.mean(kMeans)) * 100),
-    #                   str((statistics.pstdev(CRO) / statistics.mean(CRO)) * 100)])
-    # rowEpochs.append(["Span Factor", str(max(kMeans)-min(kMeans)), str(max(CRO)-min(CRO))])
-    for i in range(len(rowEpochs)):
-        text = ""
-        for j in range(len(rowEpochs[i])):
-            text += str(rowEpochs[i][j]) + "\t"
-        file.write(text + "\n")
     file.write("Min" + " " + str(min(kMeans)) + " " + str(min(CRO)) + "\n")
     file.write("Max" + " " + str(max(kMeans)) + " " + str(max(CRO)) + "\n")
     file.write("Mean" + " " + str(statistics.mean(kMeans)) + " " + str(statistics.mean(CRO)) + "\n")
@@ -310,27 +299,25 @@ def makeAnalysis(dataSet, k, originalCluster, countIterAnalysis, iterCRO):
                       str((statistics.pstdev(CRO) / statistics.mean(CRO)) * 100) + "\n")
     file.write("Span Factor" + " " + str(max(kMeans) - min(kMeans)) + " " + str(max(CRO) - min(CRO)) + "\n")
 
-    #histKMeansVariationList.append((statistics.pstdev(CRO) / statistics.mean(CRO)) * 100)
-    rowEpochs = []
     epochs = 0
     kMeans = []
     CRO = []
-    #rowEpochs.append(['Cosine Similarity'])
+
     file.write('Cosine Similarity\n')
+    file.write('Iteration\tSSE\tFitness\n')
     while epochs < countIterAnalysis:
         epochs += 1
+        originalCluster = [r.randint(1, k) for _ in range(len(dataSet))]
         newCluster, centroid, sse, countIterKMeans = kmeans.kMeansWithCos(dataSet, originalCluster, k)
         #fitness = kmeans.fitnessCos(dataSet, newCluster, centroid, k)
         kMeans.append(sse)
         newFitness, cluster = makeFitnessCos(dataSet, k, centroid, iterCRO)
         CRO.append(newFitness)
-        rowEpochs.append([epochs, sse, newFitness])
+        file.write(str(epochs) + "\t" + str(sse) + "\t" + str(newFitness) + "\n")
+        file.write("\tКластера\n")
+        for i in range(len(newCluster)):
+            file.write("\t\tСтрока " + str(i + 1) + "\t" + str(newCluster[i] - 1) + "\n")
 
-    for i in range(len(rowEpochs)):
-        text = ""
-        for j in range(len(rowEpochs[i])):
-            text += str(rowEpochs[i][j]) + "\t"
-        file.write(text + "\n")
     file.write("Min" + " " + str(min(kMeans)) + " " + str(min(CRO)) + "\n")
     file.write("Max" + " " + str(max(kMeans)) + " " + str(max(CRO)) + "\n")
     file.write("Mean" + " " + str(statistics.mean(kMeans)) + " " + str(statistics.mean(CRO))+ "\n")
@@ -343,23 +330,21 @@ def makeAnalysis(dataSet, k, originalCluster, countIterAnalysis, iterCRO):
     epochs = 0
     kMeans = []
     CRO = []
-    rowEpochs = []
-    #rowEpochs.append(['Cosine Similarity + Euclidean Distance'])
     file.write('Cosine Similarity + Euclidean Distance\n')
+    file.write('Iteration\tSSE\tFitness\n')
     while epochs < countIterAnalysis:
         epochs += 1
+        originalCluster = [r.randint(1, k) for _ in range(len(dataSet))]
         newCluster, centroid, sse, countIterKMeans = kmeans.kMeansWithCosAndEuclid(dataSet, originalCluster, k)
         #fitness = kmeans.fitnessCosWithDist(dataSet, newCluster, centroid, k)
         kMeans.append(sse)
         newFitness, cluster = makeFitnessCosAndEuclid(dataSet, k, centroid, iterCRO)
         CRO.append(newFitness)
-        rowEpochs.append([epochs, sse, newFitness])
+        file.write(str(epochs) + "\t" + str(sse) + "\t" + str(newFitness) + "\n")
+        file.write("\tКластера\n")
+        for i in range(len(newCluster)):
+            file.write("\t\tСтрока " + str(i + 1) + "\t" + str(newCluster[i] - 1) + "\n")
 
-    for i in range(len(rowEpochs)):
-        text = ""
-        for j in range(len(rowEpochs[i])):
-            text += str(rowEpochs[i][j]) + "\t"
-        file.write(text + "\n")
     file.write("Min" + " " + str(min(kMeans)) + " " + str(min(CRO)) + "\n")
     file.write("Max" + " " + str(max(kMeans)) + " " + str(max(CRO)) + "\n")
     file.write("Mean" + " " + str(statistics.mean(kMeans)) + " " + str(statistics.mean(CRO)) + "\n")
