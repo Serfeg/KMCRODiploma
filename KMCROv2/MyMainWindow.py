@@ -1,3 +1,5 @@
+import os
+
 from MainWindow import Ui_MainWindow
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QFileDialog, QMainWindow
@@ -83,12 +85,15 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
             if self.typeKmeans == 'EuclidDist':
                 newCluster, centroid, sse, countIterKMeans = kmeans.kMeans(dataSet, originalCluster, k)
                 fitness = kmeans.fitnessEuclidDist(dataSet, newCluster, centroid, k)
+                makeNewAnalysis(dataSet, k, self.countIterCRO, self.countIterAnalysis, 'tests', self.typeKmeans)
             elif self.typeKmeans == 'CosSim':
                 newCluster, centroid, sse, countIterKMeans = kmeans.kMeansWithCos(dataSet, originalCluster, k)
                 fitness = kmeans.fitnessCos(dataSet, newCluster, centroid, k)
+                makeNewAnalysis(dataSet, k, self.countIterCRO, self.countIterAnalysis, 'tests', self.typeKmeans)
             elif self.typeKmeans == 'CosEuclid':
                 newCluster, centroid, sse, countIterKMeans = kmeans.kMeansWithCosAndEuclid(dataSet, originalCluster, k)
                 fitness = kmeans.fitnessCosWithDist(dataSet, newCluster, centroid, k)
+                makeNewAnalysis(dataSet, k, self.countIterCRO, self.countIterAnalysis, 'tests', self.typeKmeans)
             text = f"Type K-means: {self.typeKmeans}\nCount of Cluster: {k}\nSSE: {sse}\nCount of Iteration K-means: {countIterKMeans}\nFitness: {fitness}"
             self.outputEdit.setText(text)
         else:
@@ -109,7 +114,7 @@ def makeDataSet(filename):
     for i in range(len(dataSet)):
         eps.append(int(dataSet[i][0]))
     for i in range(len(dataSet)):
-        dataSet[i].pop(0)
+        dataSet[i].pop(-1)
     return dataSet, eps
 
 
@@ -125,12 +130,10 @@ def makeNormalization(dataSet):
 
 
 def makeFitnessEuclidDist(dataSet, k, centroid, iterCRO):
-    countIterCRO = 0
     newFitness = 10000
     newCluster = []
 
-    while countIterCRO < iterCRO:
-        countIterCRO += 1
+    for i in range(iterCRO):
         croFitness = []
         croList = []
 
@@ -174,12 +177,10 @@ def makeFitnessEuclidDist(dataSet, k, centroid, iterCRO):
 
 
 def makeFitnessCos(dataSet, k, centroid, iterCRO):
-    countIterCRO = 0
     newFitness = -10000
     newCluster = []
 
-    while countIterCRO < iterCRO:
-        countIterCRO += 1
+    for i in range(iterCRO):
         croFitness = []
         croList = []
 
@@ -223,12 +224,10 @@ def makeFitnessCos(dataSet, k, centroid, iterCRO):
 
 
 def makeFitnessCosAndEuclid(dataSet, k, centroid, iterCRO):
-    countIterCRO = 0
     newFitness = -10000
     newCluster = []
 
-    while countIterCRO < iterCRO:
-        countIterCRO += 1
+    for i in range(iterCRO):
         croFitness = []
         croList = []
 
@@ -368,6 +367,149 @@ def makeAnalysis(dataSet, k, countIterAnalysis, iterCRO):
     #
     # plt.title('Histogram of Standard deviation')
     # plt.show()
+
+
+def makeNewAnalysis(dataSet, k, iterCRO, countIterAnalysis, path, typeKMeans):
+    os.chdir(path)
+    kMeans = []
+    CRO = []
+    if typeKMeans == 'EuclidDist':
+        for i in range(countIterAnalysis):
+            file = open('Запуск '+str(i+1)+' kmeans'+'.txt', 'w+')
+            originalCluster = [r.randint(1, k) for _ in range(len(dataSet))]
+            newClusterKmeans, centroid, sse, countIterKMeans = kmeans.kMeans(dataSet, originalCluster, k)
+            fitness = kmeans.fitnessEuclidDist(dataSet, newClusterKmeans, centroid, k)
+            for j in range(len(newClusterKmeans)):
+                file.write("Строка " + str(j + 1) + "\t" + str(newClusterKmeans[j] - 1) + "\n")
+            file.write("Количество итераций KMeans:\t" + str(countIterKMeans) + "\n")
+            file.write("SSE:\t"+str(sse)+"\n")
+            file.write("Fitness\t"+str(fitness))
+            file.close()
+            kMeans.append(sse)
+            fileCRO = open('Запуск '+str(i+1)+' kmeans+CRO'+'.txt', 'w+')
+            newFitness, fitnessCluster = makeFitnessEuclidDist(dataSet, k, centroid, iterCRO)
+            if newFitness > fitness:
+                fileCRO.write('Лучшее решение было найдено Kmeans\n')
+                for j in range(len(newClusterKmeans)):
+                    fileCRO.write("Строка " + str(j + 1) + "\t" + str(newClusterKmeans[j] - 1) + "\n")
+                fileCRO.write("Количество итераций KMeans:\t" + str(countIterKMeans) + "\n")
+                fileCRO.write("SSE:\t" + str(sse) + "\n")
+                fileCRO.write("Fitness\t" + str(fitness))
+                CRO.append(fitness)
+            else:
+                fileCRO.write('Лучшее решение было найдено CRO\n')
+                for j in range(len(fitnessCluster)):
+                    fileCRO.write("Строка " + str(j + 1) + "\t" + str(fitnessCluster[j] - 1) + "\n")
+                fileCRO.write("Количество итераций KMeans:\t" + str(countIterKMeans) + "\n")
+                fileCRO.write("SSE:\t" + str(sse) + "\n")
+                fileCRO.write("Fitness\t" + str(newFitness))
+                CRO.append(newFitness)
+            fileCRO.close()
+        file = open('Общий_файл.txt', 'w+')
+        file.write('Номер запуска\tSSE\tFitness\n')
+        for i in range(countIterAnalysis):
+            file.write('Запуск '+str(i+1)+'\t'+str(kMeans[i])+'\t'+str(CRO[i])+'\n')
+        file.write("Min" + " " + str(min(kMeans)) + " " + str(min(CRO)) + "\n")
+        file.write("Max" + " " + str(max(kMeans)) + " " + str(max(CRO)) + "\n")
+        file.write("Mean" + " " + str(statistics.mean(kMeans)) + " " + str(statistics.mean(CRO)) + "\n")
+        file.write("Standard deviation" + " " + str(statistics.pstdev(kMeans)) + " " + str(statistics.pstdev(CRO)) + "\n")
+        file.write(
+            "Coefficient of variation" + " " + str((statistics.pstdev(kMeans) / statistics.mean(kMeans)) * 100) + " " +
+            str((statistics.pstdev(CRO) / statistics.mean(CRO)) * 100) + "\n")
+        file.write("Span Factor" + " " + str(max(kMeans) - min(kMeans)) + " " + str(max(CRO) - min(CRO)) + "\n")
+        file.close()
+    elif typeKMeans == 'CosSim':
+        for i in range(countIterAnalysis):
+            file = open('Запуск '+str(i+1)+' kmeans'+'.txt', 'w+')
+            originalCluster = [r.randint(1, k) for _ in range(len(dataSet))]
+            newClusterKmeans, centroid, sse, countIterKMeans = kmeans.kMeansWithCos(dataSet, originalCluster, k)
+            fitness = kmeans.fitnessCos(dataSet, newClusterKmeans, centroid, k)
+            for j in range(len(newClusterKmeans)):
+                file.write("Строка " + str(j + 1) + "\t" + str(newClusterKmeans[j] - 1) + "\n")
+            file.write("Количество итераций KMeans:\t" + str(countIterKMeans) + "\n")
+            file.write("SSE:\t"+str(sse)+"\n")
+            file.write("Fitness\t"+str(fitness))
+            file.close()
+            kMeans.append(sse)
+            fileCRO = open('Запуск '+str(i+1)+' kmeans+CRO'+'.txt', 'w+')
+            newFitness, fitnessCluster = makeFitnessCos(dataSet, k, centroid, iterCRO)
+            if fitness > newFitness:
+                fileCRO.write('Лучшее решение было найдено Kmeans\n')
+                for j in range(len(newClusterKmeans)):
+                    fileCRO.write("Строка " + str(j + 1) + "\t" + str(newClusterKmeans[j] - 1) + "\n")
+                fileCRO.write("Количество итераций KMeans:\t" + str(countIterKMeans) + "\n")
+                fileCRO.write("SSE:\t" + str(sse) + "\n")
+                fileCRO.write("Fitness\t" + str(fitness))
+                CRO.append(fitness)
+            else:
+                fileCRO.write('Лучшее решение было найдено CRO\n')
+                for j in range(len(fitnessCluster)):
+                    fileCRO.write("Строка " + str(j + 1) + "\t" + str(fitnessCluster[j] - 1) + "\n")
+                fileCRO.write("Количество итераций KMeans:\t" + str(countIterKMeans) + "\n")
+                fileCRO.write("SSE:\t" + str(sse) + "\n")
+                fileCRO.write("Fitness\t" + str(newFitness))
+                CRO.append(newFitness)
+            fileCRO.close()
+        file = open('Общий_файл.txt', 'w+')
+        file.write('Номер запуска\tSSE\tFitness\n')
+        for i in range(countIterAnalysis):
+            file.write('Запуск '+str(i+1)+'\t'+str(kMeans[i])+'\t'+str(CRO[i])+'\n')
+        file.write("Min" + " " + str(min(kMeans)) + " " + str(min(CRO)) + "\n")
+        file.write("Max" + " " + str(max(kMeans)) + " " + str(max(CRO)) + "\n")
+        file.write("Mean" + " " + str(statistics.mean(kMeans)) + " " + str(statistics.mean(CRO)) + "\n")
+        file.write("Standard deviation" + " " + str(statistics.pstdev(kMeans)) + " " + str(statistics.pstdev(CRO)) + "\n")
+        file.write(
+            "Coefficient of variation" + " " + str((statistics.pstdev(kMeans) / statistics.mean(kMeans)) * 100) + " " +
+            str((statistics.pstdev(CRO) / statistics.mean(CRO)) * 100) + "\n")
+        file.write("Span Factor" + " " + str(max(kMeans) - min(kMeans)) + " " + str(max(CRO) - min(CRO)) + "\n")
+        file.close()
+    elif typeKMeans == 'CosEuclid':
+        for i in range(countIterAnalysis):
+            file = open('Запуск '+str(i+1)+' kmeans'+'.txt', 'w+')
+            originalCluster = [r.randint(1, k) for _ in range(len(dataSet))]
+            newClusterKmeans, centroid, sse, countIterKMeans = kmeans.kMeansWithCosAndEuclid(dataSet, originalCluster, k)
+            fitness = kmeans.fitnessCosWithDist(dataSet, newClusterKmeans, centroid, k)
+            for j in range(len(newClusterKmeans)):
+                file.write("Строка " + str(j + 1) + "\t" + str(newClusterKmeans[j] - 1) + "\n")
+            file.write("Количество итераций KMeans:\t" + str(countIterKMeans) + "\n")
+            file.write("SSE:\t"+str(sse)+"\n")
+            file.write("Fitness\t"+str(fitness))
+            file.close()
+            kMeans.append(sse)
+            fileCRO = open('Запуск '+str(i+1)+' kmeans+CRO'+'.txt', 'w+')
+            newFitness, fitnessCluster = makeFitnessCosAndEuclid(dataSet, k, centroid, iterCRO)
+            if fitness > newFitness:
+                fileCRO.write('Лучшее решение было найдено Kmeans\n')
+                for j in range(len(newClusterKmeans)):
+                    fileCRO.write("Строка " + str(j + 1) + "\t" + str(newClusterKmeans[j] - 1) + "\n")
+                fileCRO.write("Количество итераций KMeans:\t" + str(countIterKMeans) + "\n")
+                fileCRO.write("SSE:\t" + str(sse) + "\n")
+                fileCRO.write("Fitness\t" + str(fitness))
+                CRO.append(fitness)
+            else:
+                fileCRO.write('Лучшее решение было найдено CRO\n')
+                for j in range(len(fitnessCluster)):
+                    fileCRO.write("Строка " + str(j + 1) + "\t" + str(fitnessCluster[j] - 1) + "\n")
+                fileCRO.write("Количество итераций KMeans:\t" + str(countIterKMeans) + "\n")
+                fileCRO.write("SSE:\t" + str(sse) + "\n")
+                fileCRO.write("Fitness\t" + str(newFitness))
+                CRO.append(newFitness)
+            fileCRO.close()
+        file = open('Общий_файл.txt', 'w+')
+        file.write('Номер запуска\tSSE\tFitness\n')
+        for i in range(countIterAnalysis):
+            file.write('Запуск '+str(i+1)+'\t'+str(kMeans[i])+'\t'+str(CRO[i])+'\n')
+        file.write("Min" + " " + str(min(kMeans)) + " " + str(min(CRO)) + "\n")
+        file.write("Max" + " " + str(max(kMeans)) + " " + str(max(CRO)) + "\n")
+        file.write("Mean" + " " + str(statistics.mean(kMeans)) + " " + str(statistics.mean(CRO)) + "\n")
+        file.write("Standard deviation" + " " + str(statistics.pstdev(kMeans)) + " " + str(statistics.pstdev(CRO)) + "\n")
+        file.write(
+            "Coefficient of variation" + " " + str((statistics.pstdev(kMeans) / statistics.mean(kMeans)) * 100) + " " +
+            str((statistics.pstdev(CRO) / statistics.mean(CRO)) * 100) + "\n")
+        file.write("Span Factor" + " " + str(max(kMeans) - min(kMeans)) + " " + str(max(CRO) - min(CRO)) + "\n")
+        file.close()
+    os.chdir("..")
+
 
 if __name__ == "__main__":
     import sys
