@@ -114,7 +114,7 @@ def makeDataSet(filename):
     for i in range(len(dataSet)):
         eps.append(int(dataSet[i][0]))
     for i in range(len(dataSet)):
-        dataSet[i].pop(-1)
+        dataSet[i].pop(0)
     return dataSet, eps
 
 

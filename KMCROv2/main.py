@@ -101,9 +101,9 @@ if __name__ == "__main__":
     #     fName = '11_33_37_42.txt'
     # elif fileNumber == 4:
     #     fName = 'total_sample_no_empties.txt'
-    fName = '11_33_37_42.txt'
-    #replaceSymb(fName, 'text.txt')
-    dataSet, eps = makeDataSet(fName)
+    # fName = '11_33_37_42.txt'
+    # #replaceSymb(fName, 'text.txt')
+    # dataSet, eps = makeDataSet(fName)
     #epsCluster = makeEpsCluster(fName, eps)
     # for i in range(len(dataSet)):
     #     sum = 0
@@ -114,8 +114,19 @@ if __name__ == "__main__":
     #         dataSet[i][j] *= 1/sum
     #print(min(min(dataSet)), max(max(dataSet)))
     #dataSet = [[dataSet[i][j] / len(dataSet) for j in range(len(dataSet[i]))] for i in range(len(dataSet))]
-    df = pd.read_csv(fName, delimiter="\t")
-
+    # df = pd.read_csv(fName, delimiter="\t")
+    dataSet = [
+        [5, 0],
+        [5, 2],
+        [3, 1],
+        [0, 4],
+        [2, 1],
+        [4, 2],
+        [2, 2],
+        [2, 3],
+        [1, 3],
+        [5, 4]
+    ]
     # Количество кластеров и точек
     print("Введите количество кластеров")
     k = int(input())
@@ -134,8 +145,8 @@ if __name__ == "__main__":
 
     for i in range(len(centroid)):
         dfCentroid['Cluster ' + str(i + 1)] = centroid[i]
-    #fitness = kmeans.fitnessEuclidDist(dataSet, newCluster, centroid, k)
-    fitness = kmeans.fitnessCosWithDist(dataSet, newCluster, centroid, k)
+    fitness = kmeans.fitnessEuclidDist(dataSet, newCluster, centroid, k)
+    #fitness = kmeans.fitnessCosWithDist(dataSet, newCluster, centroid, k)
     print(f"Fitness K-means: {fitness}")
 
     countIterCRO = 0

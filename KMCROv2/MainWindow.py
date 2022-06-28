@@ -160,5 +160,5 @@ class Ui_MainWindow(object):
         self.croCheckBox.setText(_translate("MainWindow", "Использовать CRO"))
         self.countIterCroLbl.setText(_translate("MainWindow", "Количество итераций CRO"))
         self.normalizationCheckBox.setText(_translate("MainWindow", "Нормировать данные"))
-        self.countIterLbl.setText(_translate("MainWindow", "Количество итераций"))
+        self.countIterLbl.setText(_translate("MainWindow", "Количество запусков"))
         self.performBtn.setText(_translate("MainWindow", "Вычислить"))
